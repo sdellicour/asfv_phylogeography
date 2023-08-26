@@ -1,0 +1,52 @@
+,,,Breakpoint Positions
+,,In Alignment, ,In Recombinant Sequence, ,Relative to 682468,, , , , , , Detection Methods
+Recombination Event Number, Number In .RDP File, Begin, End,Begin, End,Begin, End, Recombinant Sequence(s), Minor Parental Sequence(s), Major Parental Sequence(s), RDP, GENECONV, Bootscan, Maxchi, Chimaera, SiSscan,PhylPro, LARD, 3Seq
+ 1 ,1~, 36451, 142847, 36435, 142803, 36436, 142805,^306192,Unknown (939584),Lith01, 4.78038111901832E-03,NS,NS, 8.12134357801808E-04, 8.05100501129854E-05,NS,NS,NS, 2.63217171731167E-04,
+
+ 2 ,2~, 186750, 1337, 186612, 1337, 186693, 1337,^Lith01,108571,Unknown (939584),NS, 2.60704188367887E-02,NS, .018459627788216, 2.44042536861161E-02,NS,NS,NS, 1.94517864032906E-04,
+ 2,,,,,,,,459800[T],,
+ 2,,,,,,,,847620[T],,
+ 2,,,,,,,,628478,,
+ 2,,,,,,,,899193[T],,
+ 2,,,,,,,,376273[T],,
+ 2,,,,,,,,376272[T],,
+ 2,,,,,,,,376271[T],,
+ 2,,,,,,,,376268[T],,
+ 2,,,,,,,,376267[T],,
+ 2,,,,,,,,376266[T],,
+ 2,,,,,,,,376265[T],,
+ 2,,,,,,,,376264[T],,
+ 2,,,,,,,,376263[T],,
+ 2,,,,,,,,376262[T],,
+ 2,,,,,,,,376261[T],,
+ 2,,,,,,,,376260[T],,
+ 2,,,,,,,,376259[T],,
+ 2,,,,,,,,376258[T],,
+ 2,,,,,,,,376257[T],,
+ 2,,,,,,,,376256[T],,
+ 2,,,,,,,,376255[T],,
+ 2,,,,,,,,376254[T],,
+ 2,,,,,,,,376253[T],,
+ 2,,,,,,,,376251[T],,
+ 2,,,,,,,,376250[T],,
+ 2,,,,,,,,799941[T],,
+ 2,,,,,,,,966716[T],,
+ 2,,,,,,,,Lith03[T],,
+ 2,,,,,,,,Lith05[T],,
+ 2,,,,,,,,Lith13[T],,
+ 2,,,,,,,,Lith17[T],,
+ 2,,,,,,,,Lith18[T],,
+ 2,,,,,,,,Lith20[T],,
+ 2,,,,,,,,Ukra10[T],,
+
+Table Key:
+~            = It is possible that this apparent recombination signal could have been caused by an evolutionary
+               process other than recombination.
+*            = The actual breakpoint position is undetermined (it was most likely overprinted by a subsequent 
+               recombination event).
+^            = The recombinant sequence may have been misidentified (one of the identified parents might be the recombinant)
+Minor Parent = Parent contributing the smaller fraction of sequence.
+Major Parent = Parent contributing the larger fraction of sequence.
+Unknown      = Only one parent and a recombinant need be in the alignment for a recombination event to be detectable.
+               The sequence listed as unknown was used to infer the existance of a missing parental sequence.
+NS           = No significant P-value was recorded for this recombination event using this method.
