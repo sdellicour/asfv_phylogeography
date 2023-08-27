@@ -239,9 +239,9 @@ networkGraph_SPADS(network_out, populations, colour_code, scaleFactor1, scaleFac
 
 # 4. Testing for a signal of recombination within the global alignment
 
-	# --> phi test on the overall aligment: the phi test did find statistically significant evidence for recombination (p = 0.03994)
+	# --> phi test on the overall aligment: the phi test did find significant evidence for recombination (p = 0.03994)
 	# --> analyses conducted with RDP4 highlight a particular sequence associated with a large recombinant fragment: MW306192
-	# --> phi test after having excluded that sequence: did not find statistically significant evidence for recombination (p = 0.07103)
+	# --> phi test after having excluded that sequence: did not find significant evidence for recombination (p = 0.07103)
 
 	# TO DO: re-running RDP4 on the alignment without MW306192 ??
 
@@ -334,7 +334,7 @@ selected_trees = c(trees[c(1:index1,indices)],"End;")
 write(selected_trees, paste0("ASFV_all_selected.trees"))
 
 	# To do: getting and annotating the MCC tree with TreeAnnotator, using the 1,000 selected trees as an input
-	# Tracer: ucld.mean = XXXX, 95% HPD = [XXXX, XXXX; root age = XXXX, 95% HPD = [XXXX-XXXX]
+	# Tracer: ucld.mean = 6.68E-6, 95% HPD = [3.67E-6, 1.016E-5]; root age = 2005.59, 95% HPD = [2001.10-2007.94]
 
 source("Tree_data_extraction1.r") # for the MCC tree
 source("Tree_data_extraction2.r") # for the posterior trees
@@ -462,8 +462,8 @@ for (h in 1:length(cutOffs))
 							{
 								polygons[[i]]@polygons[[j]] = checkPolygonsHoles(polygons[[i]]@polygons[[j]])
 							}
-						pol = polygons[[i]]; crs(pol) = crs(countries)
-						if (croppingPolygons == TRUE) pol = crop(pol, countries)
+						pol = polygons[[i]]; crs(pol) = crs(countries1)
+						if (croppingPolygons == TRUE) pol = crop(pol, countries1)
 						plot(pol, axes=F, col=polygons_colours[[i]][j], add=T, border=NA)
 					}
 			}
@@ -509,8 +509,8 @@ for (h in 1:length(cutOffs))
 							{
 								polygons[[i]]@polygons[[j]] = checkPolygonsHoles(polygons[[i]]@polygons[[j]])
 							}
-						pol = polygons[[i]]; crs(pol) = crs(countries)
-						if (croppingPolygons == TRUE) pol = crop(pol, countries)
+						pol = polygons[[i]]; crs(pol) = crs(countries2)
+						if (croppingPolygons == TRUE) pol = crop(pol, countries2)
 						plot(pol, axes=F, col=polygons_colours[[i]][j], add=T, border=NA)
 					}
 			}
