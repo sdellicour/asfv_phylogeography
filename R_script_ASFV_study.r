@@ -1,5 +1,6 @@
 # IDEAS:
-	# - completing Figure 2 with some boxes/graphical elements summarising known ASFV dispersal history
+	# - conducting a second temporal signal analysis with the BETS approach of Duchene et al. (2020)?
+	# - completing Figure 2 with some boxes/graphical elements summarising known ASFV dispersal history?
 
 library(ape)
 library(diagram)
@@ -341,6 +342,9 @@ source("Tree_data_extraction2.r") # for the posterior trees
 mostRecentSamplingDatum = 2022 # ?? (unprecise...)
 mcc_tre = readAnnotatedNexus(paste0("ASFV_all_selected.tree"))
 mcc_tab = Tree_data_extraction1(mcc_tre, mostRecentSamplingDatum)
+	# not used as leading to intermediate internal node coordinates that did not really make sense
+mcc_tab = read.csv(paste0(localTreesDirectory,"/TreeExtractions_664.csv"), head=T)
+	# posterior tree whose topology was selected by TreeAnnotator to annotate the MCC tree
 write.csv(mcc_tab, paste0("ASFV_all_selected.csv"), row.names=F, quote=F)
 localTreesDirectory = paste0("ASFV_all_selected_ext")
 allTrees = readAnnotatedNexus(paste0("ASFV_all_selected.trees"))
@@ -426,7 +430,7 @@ borders1 = crop(shapefile("International_borders/Only_international_borders.shp"
 coasts1 = crop(shapefile("Coast_lines_borders/Only_coast_lines_borders.shp"), e_Palearctic)
 countries2 = crop(countries1, e_Europe); borders2 = crop(borders1, e_Europe); coasts2 = crop(coasts1, e_Europe)
 
-prob = 0.80; precision = 3; startDatum=minYear
+prob = 0.80; precision = 1; startDatum = minYear
 polygons = suppressWarnings(spreadGraphic2(localTreesDirectory, nberOfExtractionFiles, prob, startDatum, precision))
 
 endYears_indices = (((mcc[,"endYear"]-minYear)/(maxYear-minYear))*100)+1
@@ -492,7 +496,7 @@ for (h in 1:length(cutOffs))
 		rect(-13, 35, 150, 73, lwd=0.2, border="gray30")
 		dev.off()
 	}
-cutOffs = c(maxYear); croppingPolygons = FALSE
+cutOffs = c(maxYear); croppingPolygons = FALSE; plottingAllNodes = FALSE
 for (h in 1:length(cutOffs))
 	{
 		pdf(paste0("ASFV_1_wo_4_tips_NEW3.pdf"), width=5.3, height=5)
@@ -501,6 +505,21 @@ for (h in 1:length(cutOffs))
 		plot(borders2, col="white", lwd=0.3, add=T)
 		plot(coasts2, col="gray70", lwd=0.5, add=T)
 		rast = raster(matrix(nrow=1, ncol=2)); rast[1] = startDatum; rast[2] = max(mcc[,"endYear"])
+		if (plottingAllNodes == TRUE)
+			{
+				for (i in 1:nberOfExtractionFiles)
+					{
+						tab = read.csv(paste0(localTreesDirectory,"/TreeExtractions_",i,".csv"), head=T)
+						internalNodes = which(tab[,"node2"]%in%tab[,"node1"]); tipNodes = which(!tab[,"node2"]%in%tab[,"node1"])
+						points(tab[internalNodes,c("endLon","endLat")], cex=0.5, pch=1, lwd=0.1, col="gray30")
+						if (i == nberOfExtractionFiles)
+							{
+								points(tab[tipNodes,c("endLon","endLat")], cex=0.3, pch=16, col="red")
+							}
+					}
+				internalNodes = which(mcc[,"node2"]%in%mcc[,"node1"])
+				points(mcc[internalNodes,c("endLon","endLat")], cex=0.3, pch=16, col="black")
+			}
 		for (i in 1:length(polygons))
 			{
 				if (as.numeric(names(polygons[[i]])) <= cutOffs[h])
