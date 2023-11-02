@@ -1,3 +1,7 @@
+# IDEAS:
+	# - conducting a second temporal signal analysis with the BETS approach of Duchene et al. (2020)?
+	# - completing Figure 2 with some boxes/graphical elements summarising known ASFV dispersal history?
+
 library(ape)
 library(diagram)
 library(fields)
@@ -616,30 +620,6 @@ dev.off()
 
 # 10. Mapping the inferred dispersal history of ASFV lineages (DTA analysis)
 
-source("Tree_data_extraction3.r")
-dir.create(file.path("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext"), showWarnings=F)
-trees = readAnnotatedNexus("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.trees")[102:1101]
-for (j in 1:length(trees))
-	{
-		tab = Tree_data_extraction3(trees[[j]], mostRecentSamplingDatum)	
-		write.csv(tab, paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext/TreeExtractions_",j,".csv"), row.names=F, quote=F)
-	}
-nberOfExtractionFiles = 1000; matrices = list()
-for (i in 1:nberOfExtractionFiles)
-	{
-		mat = matrix(0, nrow=length(countries), ncol=length(countries))
-		row.names(mat) = countries; colnames(mat) = countries
-		tab = read.csv(paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext/TreeExtractions_",i,".csv"), head=T)
-		for (j in 1:dim(tab)[1])
-			{
-				index1 = which(countries==tab[j,"startLoc"])
-				index2 = which(countries==tab[j,"endLoc"])
-				mat[index1,index2] = mat[index1,index2]+1
-			}
-		matrices[[i]] = mat
-	}
-saveRDS(matrices, "ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.rds")
-
 mcc_tre = readAnnotatedNexus("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.tree")
 mostRecentSamplingDatum = 2022 # ?? (unprecise...)
 mcc = read.csv(paste0("ASFV_1_wo_4tips_RRW/ASFV_all_selected.csv"), head=T)
@@ -725,6 +705,30 @@ axis(lwd=0.3, at=selectedDates-root_time, labels=selectedLabels, cex.axis=0.60, 
 	 col.lab="gray30", col="gray30", tck=-0.010, side=1)
 dev.off()
 
+source("Tree_data_extraction3.r")
+dir.create(file.path("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext"), showWarnings=F)
+trees = readAnnotatedNexus("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.trees")[102:1101]
+for (j in 1:length(trees))
+	{
+		tab = Tree_data_extraction3(trees[[j]], mostRecentSamplingDatum)	
+		write.csv(tab, paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext/TreeExtractions_",j,".csv"), row.names=F, quote=F)
+	}
+nberOfExtractionFiles = 1000; matrices = list()
+for (i in 1:nberOfExtractionFiles)
+	{
+		mat = matrix(0, nrow=length(countries), ncol=length(countries))
+		row.names(mat) = countries; colnames(mat) = countries
+		tab = read.csv(paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1_ext/TreeExtractions_",i,".csv"), head=T)
+		for (j in 1:dim(tab)[1])
+			{
+				index1 = which(countries==tab[j,"startLoc"])
+				index2 = which(countries==tab[j,"endLoc"])
+				mat[index1,index2] = mat[index1,index2]+1
+			}
+		matrices[[i]] = mat
+	}
+saveRDS(matrices, "ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.rds")
+
 log1 = scan(paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.log"), what="", sep="\n", quiet=T, blank.lines.skip=F)
 write(log1[which(!grepl("# ",log1))], paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_4.log"))
 log1 = read.table(paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_4.log"), header=T, sep="\t"); log1 = log1[102:1001,]
@@ -765,8 +769,7 @@ buffer = rbind(cbind(128.13,52.43), cbind(21.41,54.75), cbind(43.42,43.45), cbin
 row.names(buffer) = c("Armur","Kaliningrad","Karbardino-Balkaria","Primorsky")
 centroids = rbind(centroids, buffer); centroids = centroids[c(1:9,11:14,10),]; matrix_mean_list = list()
 matrices = readRDS(paste0("ASFV_1_wo_4tips_DTA/ASFV_1_wo_4_tips_DTA_1.rds"))
-matrix_mean = matrix(0, nrow=length(countries), ncol=length(countries))
-nberOfExtractionFiles = 1000
+matrix_mean = matrix(0, nrow=length(countries), ncol=length(countries)); nberOfExtractionFiles = 1000
 for (i in 1:nberOfExtractionFiles) matrix_mean = matrix_mean+matrices[[i]]
 matrix_mean = matrix_mean/nberOfExtractionFiles
 minVals1 = min(diag(matrix_mean)); maxVals1 = max(diag(matrix_mean))
@@ -783,7 +786,7 @@ for (i in 1:dim(centroids)[1])
 	{
 		for (j in 1:dim(centroids)[1])
 			{
-				if ((i!=j)&(mat[i,j]<1))
+				if ((i!=j)&(mat[i,j]<=0.75))
 					{
 						LWD = (((mat[i,j]-minVals2)/(maxVals2-minVals2))*multiplier2)+0.1; arrow = (multiplier3*(mat[i,j]/maxVals2))+0.02
 						# curvedarrow(centroids[i,], centroids[j,], arr.length=arrow*1.3, arr.width=arrow, lwd=LWD, lty=2,
@@ -795,7 +798,7 @@ for (i in 1:dim(centroids)[1])
 	{
 		for (j in 1:dim(centroids)[1])
 			{
-				if ((i!=j)&(mat[i,j]>=1))
+				if ((i!=j)&(mat[i,j]>0.75))
 					{
 						LWD = (((mat[i,j]-minVals2)/(maxVals2-minVals2))*multiplier2)+0.1; arrow = (multiplier3*(mat[i,j]/maxVals2))+0.02
 						if ((!is.na(BFs[i,j]))&&(BFs[i,j]<3))
@@ -810,7 +813,7 @@ for (i in 1:dim(centroids)[1])
 	{
 		for (j in 1:dim(centroids)[1])
 			{
-				if ((i!=j)&(mat[i,j]>=1))
+				if ((i!=j)&(mat[i,j]>0.75))
 					{
 						LWD = (((mat[i,j]-minVals2)/(maxVals2-minVals2))*multiplier2)+0.1; arrow = (multiplier3*(mat[i,j]/maxVals2))+0.02
 						if ((!is.na(BFs[i,j]))&&(BFs[i,j]>3))
