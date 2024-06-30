@@ -1,0 +1,8 @@
+Alignment_280224a --> European isolates which includes new ones from Italy and Serbia
+Alignment_280224b --> includes the European ones and the first 2 reliable Chinese genomes
+Alignment_280224c --> includes the European, the two Chinese, and some African genomes
+
+Three remarks from Chris Netherton (by e-mail, 28/02/24):
+- "I think the original RDP4 conclusion that the Russian genome MW306192 was a recombinant is incorrect. IIRC there was a single bp difference between this virus and some of the others"
+- "I’m a bit confused about the location of the Latvian virus, there is a location given but I couldn’t work out exactly where in Latvia the location referred to"
+- "we also kicked out a Ukrainian isolate for lacking a date and this has now been added"

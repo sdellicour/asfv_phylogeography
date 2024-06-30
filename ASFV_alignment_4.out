@@ -1,0 +1,1290 @@
+Results of file C:\Users\Maria Vincenti\Dropbox\PC\Desktop\ASFV_RDP4\2nd_analyses\ASFV_alignment_4.rdf with Epsilon=0
+Criterion for generated median vectors : Connection cost.
+with weighting transversions/transitions: 1/1
+
+Equivalent taxa : 
+
+Tax.      4 with tax.      5
+Tax.      4 with tax.     46
+Tax.      7 with tax.      8
+Tax.      7 with tax.      9
+Tax.     23 with tax.     24
+Tax.     25 with tax.     29
+Tax.     25 with tax.     30
+Tax.     25 with tax.     67
+Tax.     26 with tax.     31
+Tax.     26 with tax.     33
+Tax.     26 with tax.     35
+Tax.     26 with tax.     36
+Tax.     28 with tax.     32
+Tax.     28 with tax.     90
+Tax.     37 with tax.     38
+Tax.     44 with tax.     48
+Tax.     44 with tax.     55
+Tax.     44 with tax.     76
+Tax.     44 with tax.     82
+Tax.     44 with tax.     83
+Tax.     44 with tax.     87
+Tax.     64 with tax.     66
+Tax.     68 with tax.     72
+Tax.     68 with tax.     73
+Tax.     68 with tax.     80
+Tax.     70 with tax.     74
+Tax.     70 with tax.     75
+Tax.     70 with tax.     77
+Tax.     70 with tax.     86
+Tax.     69 with tax.     81
+Tax.     69 with tax.     89
+Tax.     79 with tax.     85
+Tax.     79 with tax.     88
+Tax.     91 with tax.     93
+Tax.     91 with tax.     94
+Tax.     91 with tax.     96
+Tax.     92 with tax.     95
+
+Final links : 
+
+Link    1 0 Seq.      1 with Seq. mv   3, mutations at 104    a 
+Link    2 0 Seq.      2 with Seq. mv   4, mutations at 132    a 133    a 178    a 185    b 338    a 339    a 
+Link    3 0 Seq.      3 with Seq.      7, mutations at 194    b 335    a 
+Link    4 0 Seq.      3 with Seq.     91, mutations at 216    a 
+Link    5 0 Seq.      4 with Seq.     44, mutations at 138    a 
+Link    6 0 Seq.      4 with Seq.     51, mutations at 25     a 89     a 146    b 
+Link    7 0 Seq.      4 with Seq.     60, mutations at 229    b 230    b 
+Link    8 0 Seq.      4 with Seq.     61, mutations at 37     b 
+Link    9 0 Seq.      4 with Seq.     62, mutations at 281    a 282    a 283    a 
+Link   10 0 Seq.      4 with Seq.     91, mutations at 143    a 
+Link   11 0 Seq.      4 with Seq. mv   1, mutations at 320    a 
+Link   12 0 Seq.      6 with Seq. mv   3, mutations at 128    a 
+Link   13 0 Seq.      7 with Seq.     10, mutations at 295    b 
+Link   14 0 Seq.     11 with Seq.     13, mutations at 9      a 10     b 33     a 34     b 35     b 36     b 38     b 43     a 44     b 46     a 47     b 81     a 105    b 106    b 107    b 113    a 164    b 166    a 167    b 168    b 169    b 179    b 198    a 199    b 203    b 217    b 226    b 287    b 305    b 306    b 307    b 311    b 
+Link   15 0 Seq.     11 with Seq. mv   9, mutations at 40     a 181    a 323    a 
+Link   16 0 Seq.     12 with Seq. mv  11, mutations at 1      a 2      a 3      a 4      a 5      a 8      a 78     a 86     a 87     a 122    a 201    b 258    b 259    b 342    a 343    a 344    a 345    a 346    a 347    a 348    a 349    a 350    a 351    a 352    a 353    a 354    a 355    a 356    a 357    a 358    a 359    a 360    a 361    a 362    a 363    a 364    a 365    a 366    a 367    b 368    b 369    a 370    a 371    a 372    b 373    a 374    a 375    a 376    b 377    a 378    b 379    a 380    a 381    a 382    a 383    a 384    a 385    b 386    b 387    a 388    a 389    b 390    b 391    b 392    b 393    a 394    a 395    a 396    a 397    a 398    b 399    b 400    a 401    a 402    b 403    b 404    b 405    a 406    a 407    a 
+Link   17 0 Seq.     14 with Seq. mv  12, mutations at 26     a 27     a 32     b 54     b 55     a 56     b 66     b 79     a 145    a 159    b 160    b 161    b 162    b 187    b 225    a 337    a 
+Link   18 0 Seq.     15 with Seq. mv   5, mutations at 156    b 157    b 186    b 248    a 
+Link   19 0 Seq.     16 with Seq.     17, mutations at 39     a 58     a 59     b 65     b 72     b 93     a 115    a 117    a 118    a 250    a 
+Link   20 0 Seq.     17 with Seq. mv  10, mutations at 19     b 73     a 
+Link   21 0 Seq.     17 with Seq. mv  11, mutations at 24     a 51     a 52     a 53     a 54     b 55     a 56     b 67     a 76     a 77     b 91     a 127    a 134    a 155    a 172    b 173    a 196    a 208    a 210    a 214    b 240    a 243    a 245    a 246    a 261    a 267    a 298    a 324    a 
+Link   22 0 Seq.     18 with Seq. mv   8, mutations at 31     a 69     a 75     a 94     a 95     a 98     a 219    a 285    a 302    a 308    a 315    a 318    a 319    a 336    b 341    a 
+Link   23 0 Seq.     19 with Seq. mv   7, mutations at 18     a 23     b 84     b 97     a 171    a 191    a 221    a 275    b 276    b 286    a 295    b 327    a 328    a 
+Link   24 0 Seq.     20 with Seq.     21, mutations at 48     a 63     a 180    a 197    a 212    a 213    a 224    a 233    a 265    a 266    a 293    b 314    a 316    a 321    a 
+Link   25 0 Seq.     21 with Seq.     43, mutations at 165    a 
+Link   26 0 Seq.     21 with Seq. mv   7, mutations at 71     a 123    b 237    b 
+Link   27 0 Seq.     22 with Seq. mv  10, mutations at 11     a 14     a 15     b 17     a 20     a 29     a 30     a 41     a 119    a 120    a 121    a 125    a 129    a 130    a 154    a 158    a 176    b 177    a 183    a 220    b 247    a 255    a 257    a 278    a 279    a 280    a 286    a 297    a 300    a 301    a 310    a 325    a 329    a 332    a 333    a 368    b 
+Link   28 0 Seq.     23 with Seq.     49, mutations at 188    a 218    a 
+Link   29 0 Seq.     23 with Seq.     51, mutations at 57     a 
+Link   30 0 Seq.     23 with Seq.     53, mutations at 12     a 64     a 235    a 274    a 295    b 
+Link   31 0 Seq.     23 with Seq.     54, mutations at 83     a 139    a 140    b 147    a 175    a 
+Link   32 0 Seq.     25 with Seq.     37, mutations at 340    a 
+Link   33 0 Seq.     25 with Seq.     39, mutations at 144    a 
+Link   34 0 Seq.     25 with Seq.     41, mutations at 85     a 99     a 326    a 
+Link   35 0 Seq.     25 with Seq.     51, mutations at 239    a 313    a 
+Link   36 0 Seq.     26 with Seq.     27, mutations at 16     b 
+Link   37 0 Seq.     26 with Seq.     28, mutations at 182    a 
+Link   38 0 Seq.     26 with Seq.     34, mutations at 150    a 
+Link   39 0 Seq.     26 with Seq.     51, mutations at 49     a 114    a 151    a 241    a 317    a 
+Link   40 0 Seq.     40 with Seq.     51, mutations at 299    a 
+Link   41 0 Seq.     42 with Seq.     51, mutations at 22     b 28     a 68     a 74     a 153    a 192    a 296    a 330    b 
+Link   42 0 Seq.     43 with Seq.     45, mutations at 62     a 102    a 126    a 174    a 215    a 284    a 295    b 309    b 312    a 
+Link   43 0 Seq.     43 with Seq.     51, mutations at 13     a 100    a 242    a 303    b 
+Link   44 0 Seq.     43 with Seq. mv   6, mutations at 60     a 149    a 271    a 331    a 
+Link   45 0 Seq.     44 with Seq.     69, mutations at 116    a 
+Link   46 0 Seq.     44 with Seq.     70, mutations at 61     a 
+Link   47 0 Seq.     44 with Seq.     71, mutations at 294    a 
+Link   48 0 Seq.     44 with Seq.     78, mutations at 238    b 
+Link   49 0 Seq.     47 with Seq. mv   1, mutations at 200    a 
+Link   50 0 Seq.     50 with Seq. mv   4, mutations at 260    a 
+Link   51 0 Seq.     51 with Seq.     57, mutations at 251    a 
+Link   52 0 Seq.     51 with Seq.     58, mutations at 70     b 195    b 
+Link   53 0 Seq.     51 with Seq.     59, mutations at 254    a 
+Link   54 0 Seq.     51 with Seq.    100, mutations at 222    a 268    a 
+Link   55 0 Seq.     51 with Seq.    101, mutations at 131    a 
+Link   56 0 Seq.     51 with Seq.    104, mutations at 103    b 334    a 
+Link   57 0 Seq.     51 with Seq. mv   3, mutations at 92     a 190    a 269    a 
+Link   58 0 Seq.     52 with Seq. mv   6, mutations at 88     a 101    a 135    a 137    a 139    a 140    b 148    b 189    a 209    a 211    a 232    a 234    a 236    a 253    a 272    a 273    a 
+Link   59 0 Seq.     56 with Seq. mv   4, mutations at 136    b 202    a 
+Link   60 0 Seq.     63 with Seq. mv   1, mutations at 277    a 
+Link   61 0 Seq.     64 with Seq.     65, mutations at 6      a 7      a 42     a 109    b 110    b 111    b 112    b 204    a 205    a 206    b 207    b 231    b 262    a 263    b 264    b 
+Link   62 0 Seq.     64 with Seq. mv   2, mutations at 294    a 
+Link   63 0 Seq.     68 with Seq.     70, mutations at 244    b 
+Link   64 0 Seq.     69 with Seq.     79, mutations at 249    a 
+Link   65 0 Seq.     79 with Seq.     84, mutations at 142    a 
+Link   66 0 Seq.     91 with Seq.     92, mutations at 227    a 292    a 
+Link   67 0 Seq.     91 with Seq.     97, mutations at 45     b 108    b 163    b 170    b 
+Link   68 0 Seq.     91 with Seq.     99, mutations at 96     a 141    a 
+Link   69 0 Seq.     92 with Seq.     98, mutations at 90     a 
+Link   70 0 Seq.    102 with Seq.    104, mutations at 21     a 193    b 
+Link   71 0 Seq.    103 with Seq. mv   2, mutations at 152    a 256    a 
+Link   72 0 Seq. mv   1 with Seq. mv   2, mutations at 80     a 
+Link   73 0 Seq. mv   4 with Seq. mv   6, mutations at 270    a 288    a 289    a 290    a 291    a 292    a 
+Link   74 1 Seq. mv   5 with Seq. mv   9, mutations at 226    b 
+Link   75 1 Seq. mv   5 with Seq. mv  12, mutations at 184    a 
+Link   76 0 Seq. mv   7 with Seq. mv   8, mutations at 50     a 228    b 322    a 
+Link   77 0 Seq. mv   8 with Seq. mv  10, mutations at 82     a 124    a 223    a 252    a 304    a 
+Link   78 1 Seq. mv   9 with Seq. mv  11, mutations at 184    a 
+Link   79 1 Seq. mv  11 with Seq. mv  12, mutations at 226    b 
+**************************************************
+Frequ. of taxon        1 :    1
+Frequ. of taxon        2 :    1
+Frequ. of taxon        3 :    1
+Frequ. of taxon        4 :    1
+Frequ. of taxon        5 :    1
+Frequ. of taxon        6 :    1
+Frequ. of taxon        7 :    1
+Frequ. of taxon        8 :    1
+Frequ. of taxon        9 :    1
+Frequ. of taxon       10 :    1
+Frequ. of taxon       11 :    1
+Frequ. of taxon       12 :    1
+Frequ. of taxon       13 :    1
+Frequ. of taxon       14 :    1
+Frequ. of taxon       15 :    1
+Frequ. of taxon       16 :    1
+Frequ. of taxon       17 :    1
+Frequ. of taxon       18 :    1
+Frequ. of taxon       19 :    1
+Frequ. of taxon       20 :    1
+Frequ. of taxon       21 :    1
+Frequ. of taxon       22 :    1
+Frequ. of taxon       23 :    1
+Frequ. of taxon       24 :    1
+Frequ. of taxon       25 :    1
+Frequ. of taxon       26 :    1
+Frequ. of taxon       27 :    1
+Frequ. of taxon       28 :    1
+Frequ. of taxon       29 :    1
+Frequ. of taxon       30 :    1
+Frequ. of taxon       31 :    1
+Frequ. of taxon       32 :    1
+Frequ. of taxon       33 :    1
+Frequ. of taxon       34 :    1
+Frequ. of taxon       35 :    1
+Frequ. of taxon       36 :    1
+Frequ. of taxon       37 :    1
+Frequ. of taxon       38 :    1
+Frequ. of taxon       39 :    1
+Frequ. of taxon       40 :    1
+Frequ. of taxon       41 :    1
+Frequ. of taxon       42 :    1
+Frequ. of taxon       43 :    1
+Frequ. of taxon       44 :    1
+Frequ. of taxon       45 :    1
+Frequ. of taxon       46 :    1
+Frequ. of taxon       47 :    1
+Frequ. of taxon       48 :    1
+Frequ. of taxon       49 :    1
+Frequ. of taxon       50 :    1
+Frequ. of taxon       51 :    1
+Frequ. of taxon       52 :    1
+Frequ. of taxon       53 :    1
+Frequ. of taxon       54 :    1
+Frequ. of taxon       55 :    1
+Frequ. of taxon       56 :    1
+Frequ. of taxon       57 :    1
+Frequ. of taxon       58 :    1
+Frequ. of taxon       59 :    1
+Frequ. of taxon       60 :    1
+Frequ. of taxon       61 :    1
+Frequ. of taxon       62 :    1
+Frequ. of taxon       63 :    1
+Frequ. of taxon       64 :    1
+Frequ. of taxon       65 :    1
+Frequ. of taxon       66 :    1
+Frequ. of taxon       67 :    1
+Frequ. of taxon       68 :    1
+Frequ. of taxon       69 :    1
+Frequ. of taxon       70 :    1
+Frequ. of taxon       71 :    1
+Frequ. of taxon       72 :    1
+Frequ. of taxon       73 :    1
+Frequ. of taxon       74 :    1
+Frequ. of taxon       75 :    1
+Frequ. of taxon       76 :    1
+Frequ. of taxon       77 :    1
+Frequ. of taxon       78 :    1
+Frequ. of taxon       79 :    1
+Frequ. of taxon       80 :    1
+Frequ. of taxon       81 :    1
+Frequ. of taxon       82 :    1
+Frequ. of taxon       83 :    1
+Frequ. of taxon       84 :    1
+Frequ. of taxon       85 :    1
+Frequ. of taxon       86 :    1
+Frequ. of taxon       87 :    1
+Frequ. of taxon       88 :    1
+Frequ. of taxon       89 :    1
+Frequ. of taxon       90 :    1
+Frequ. of taxon       91 :    1
+Frequ. of taxon       92 :    1
+Frequ. of taxon       93 :    1
+Frequ. of taxon       94 :    1
+Frequ. of taxon       95 :    1
+Frequ. of taxon       96 :    1
+Frequ. of taxon       97 :    1
+Frequ. of taxon       98 :    1
+Frequ. of taxon       99 :    1
+Frequ. of taxon      100 :    1
+Frequ. of taxon      101 :    1
+Frequ. of taxon      102 :    1
+Frequ. of taxon      103 :    1
+Frequ. of taxon      104 :    1
+Frequ. of taxon   mv   1 :    0
+Frequ. of taxon   mv   2 :    0
+Frequ. of taxon   mv   3 :    0
+Frequ. of taxon   mv   4 :    0
+Frequ. of taxon   mv   5 :    0
+Frequ. of taxon   mv   6 :    0
+Frequ. of taxon   mv   7 :    0
+Frequ. of taxon   mv   8 :    0
+Frequ. of taxon   mv   9 :    0
+Frequ. of taxon   mv  10 :    0
+Frequ. of taxon   mv  11 :    0
+Frequ. of taxon   mv  12 :    0
+**************************************************
+Weight of character 1      :  10
+Weight of character 2      :  10
+Weight of character 3      :  10
+Weight of character 4      :  10
+Weight of character 5      :  10
+Weight of character 6      :  10
+Weight of character 7      :  10
+Weight of character 8      :  10
+Weight of character 9      :  10
+Weight of character 10     :  10
+Weight of character 11     :  10
+Weight of character 12     :  10
+Weight of character 13     :  10
+Weight of character 14     :  10
+Weight of character 15     :  10
+Weight of character 16     :  10
+Weight of character 17     :  10
+Weight of character 18     :  10
+Weight of character 19     :  10
+Weight of character 20     :  10
+Weight of character 21     :  10
+Weight of character 22     :  10
+Weight of character 23     :  10
+Weight of character 24     :  10
+Weight of character 25     :  10
+Weight of character 26     :  10
+Weight of character 27     :  10
+Weight of character 28     :  10
+Weight of character 29     :  10
+Weight of character 30     :  10
+Weight of character 31     :  10
+Weight of character 32     :  10
+Weight of character 33     :  10
+Weight of character 34     :  10
+Weight of character 35     :  10
+Weight of character 36     :  10
+Weight of character 37     :  10
+Weight of character 38     :  10
+Weight of character 39     :  10
+Weight of character 40     :  10
+Weight of character 41     :  10
+Weight of character 42     :  10
+Weight of character 43     :  10
+Weight of character 44     :  10
+Weight of character 45     :  10
+Weight of character 46     :  10
+Weight of character 47     :  10
+Weight of character 48     :  10
+Weight of character 49     :  10
+Weight of character 50     :  10
+Weight of character 51     :  10
+Weight of character 52     :  10
+Weight of character 53     :  10
+Weight of character 54     :  10
+Weight of character 55     :  10
+Weight of character 56     :  10
+Weight of character 57     :  10
+Weight of character 58     :  10
+Weight of character 59     :  10
+Weight of character 60     :  10
+Weight of character 61     :  10
+Weight of character 62     :  10
+Weight of character 63     :  10
+Weight of character 64     :  10
+Weight of character 65     :  10
+Weight of character 66     :  10
+Weight of character 67     :  10
+Weight of character 68     :  10
+Weight of character 69     :  10
+Weight of character 70     :  10
+Weight of character 71     :  10
+Weight of character 72     :  10
+Weight of character 73     :  10
+Weight of character 74     :  10
+Weight of character 75     :  10
+Weight of character 76     :  10
+Weight of character 77     :  10
+Weight of character 78     :  10
+Weight of character 79     :  10
+Weight of character 80     :  10
+Weight of character 81     :  10
+Weight of character 82     :  10
+Weight of character 83     :  10
+Weight of character 84     :  10
+Weight of character 85     :  10
+Weight of character 86     :  10
+Weight of character 87     :  10
+Weight of character 88     :  10
+Weight of character 89     :  10
+Weight of character 90     :  10
+Weight of character 91     :  10
+Weight of character 92     :  10
+Weight of character 93     :  10
+Weight of character 94     :  10
+Weight of character 95     :  10
+Weight of character 96     :  10
+Weight of character 97     :  10
+Weight of character 98     :  10
+Weight of character 99     :  10
+Weight of character 100    :  10
+Weight of character 101    :  10
+Weight of character 102    :  10
+Weight of character 103    :  10
+Weight of character 104    :  10
+Weight of character 105    :  10
+Weight of character 106    :  10
+Weight of character 107    :  10
+Weight of character 108    :  10
+Weight of character 109    :  10
+Weight of character 110    :  10
+Weight of character 111    :  10
+Weight of character 112    :  10
+Weight of character 113    :  10
+Weight of character 114    :  10
+Weight of character 115    :  10
+Weight of character 116    :  10
+Weight of character 117    :  10
+Weight of character 118    :  10
+Weight of character 119    :  10
+Weight of character 120    :  10
+Weight of character 121    :  10
+Weight of character 122    :  10
+Weight of character 123    :  10
+Weight of character 124    :  10
+Weight of character 125    :  10
+Weight of character 126    :  10
+Weight of character 127    :  10
+Weight of character 128    :  10
+Weight of character 129    :  10
+Weight of character 130    :  10
+Weight of character 131    :  10
+Weight of character 132    :  10
+Weight of character 133    :  10
+Weight of character 134    :  10
+Weight of character 135    :  10
+Weight of character 136    :  10
+Weight of character 137    :  10
+Weight of character 138    :  10
+Weight of character 139    :  10
+Weight of character 140    :  10
+Weight of character 141    :  10
+Weight of character 142    :  10
+Weight of character 143    :  10
+Weight of character 144    :  10
+Weight of character 145    :  10
+Weight of character 146    :  10
+Weight of character 147    :  10
+Weight of character 148    :  10
+Weight of character 149    :  10
+Weight of character 150    :  10
+Weight of character 151    :  10
+Weight of character 152    :  10
+Weight of character 153    :  10
+Weight of character 154    :  10
+Weight of character 155    :  10
+Weight of character 156    :  10
+Weight of character 157    :  10
+Weight of character 158    :  10
+Weight of character 159    :  10
+Weight of character 160    :  10
+Weight of character 161    :  10
+Weight of character 162    :  10
+Weight of character 163    :  10
+Weight of character 164    :  10
+Weight of character 165    :  10
+Weight of character 166    :  10
+Weight of character 167    :  10
+Weight of character 168    :  10
+Weight of character 169    :  10
+Weight of character 170    :  10
+Weight of character 171    :  10
+Weight of character 172    :  10
+Weight of character 173    :  10
+Weight of character 174    :  10
+Weight of character 175    :  10
+Weight of character 176    :  10
+Weight of character 177    :  10
+Weight of character 178    :  10
+Weight of character 179    :  10
+Weight of character 180    :  10
+Weight of character 181    :  10
+Weight of character 182    :  10
+Weight of character 183    :  10
+Weight of character 184    :  10
+Weight of character 185    :  10
+Weight of character 186    :  10
+Weight of character 187    :  10
+Weight of character 188    :  10
+Weight of character 189    :  10
+Weight of character 190    :  10
+Weight of character 191    :  10
+Weight of character 192    :  10
+Weight of character 193    :  10
+Weight of character 194    :  10
+Weight of character 195    :  10
+Weight of character 196    :  10
+Weight of character 197    :  10
+Weight of character 198    :  10
+Weight of character 199    :  10
+Weight of character 200    :  10
+Weight of character 201    :  10
+Weight of character 202    :  10
+Weight of character 203    :  10
+Weight of character 204    :  10
+Weight of character 205    :  10
+Weight of character 206    :  10
+Weight of character 207    :  10
+Weight of character 208    :  10
+Weight of character 209    :  10
+Weight of character 210    :  10
+Weight of character 211    :  10
+Weight of character 212    :  10
+Weight of character 213    :  10
+Weight of character 214    :  10
+Weight of character 215    :  10
+Weight of character 216    :  10
+Weight of character 217    :  10
+Weight of character 218    :  10
+Weight of character 219    :  10
+Weight of character 220    :  10
+Weight of character 221    :  10
+Weight of character 222    :  10
+Weight of character 223    :  10
+Weight of character 224    :  10
+Weight of character 225    :  10
+Weight of character 226    :  10
+Weight of character 227    :  10
+Weight of character 228    :  10
+Weight of character 229    :  10
+Weight of character 230    :  10
+Weight of character 231    :  10
+Weight of character 232    :  10
+Weight of character 233    :  10
+Weight of character 234    :  10
+Weight of character 235    :  10
+Weight of character 236    :  10
+Weight of character 237    :  10
+Weight of character 238    :  10
+Weight of character 239    :  10
+Weight of character 240    :  10
+Weight of character 241    :  10
+Weight of character 242    :  10
+Weight of character 243    :  10
+Weight of character 244    :  10
+Weight of character 245    :  10
+Weight of character 246    :  10
+Weight of character 247    :  10
+Weight of character 248    :  10
+Weight of character 249    :  10
+Weight of character 250    :  10
+Weight of character 251    :  10
+Weight of character 252    :  10
+Weight of character 253    :  10
+Weight of character 254    :  10
+Weight of character 255    :  10
+Weight of character 256    :  10
+Weight of character 257    :  10
+Weight of character 258    :  10
+Weight of character 259    :  10
+Weight of character 260    :  10
+Weight of character 261    :  10
+Weight of character 262    :  10
+Weight of character 263    :  10
+Weight of character 264    :  10
+Weight of character 265    :  10
+Weight of character 266    :  10
+Weight of character 267    :  10
+Weight of character 268    :  10
+Weight of character 269    :  10
+Weight of character 270    :  10
+Weight of character 271    :  10
+Weight of character 272    :  10
+Weight of character 273    :  10
+Weight of character 274    :  10
+Weight of character 275    :  10
+Weight of character 276    :  10
+Weight of character 277    :  10
+Weight of character 278    :  10
+Weight of character 279    :  10
+Weight of character 280    :  10
+Weight of character 281    :  10
+Weight of character 282    :  10
+Weight of character 283    :  10
+Weight of character 284    :  10
+Weight of character 285    :  10
+Weight of character 286    :  10
+Weight of character 287    :  10
+Weight of character 288    :  10
+Weight of character 289    :  10
+Weight of character 290    :  10
+Weight of character 291    :  10
+Weight of character 292    :  10
+Weight of character 293    :  10
+Weight of character 294    :  10
+Weight of character 295    :  10
+Weight of character 296    :  10
+Weight of character 297    :  10
+Weight of character 298    :  10
+Weight of character 299    :  10
+Weight of character 300    :  10
+Weight of character 301    :  10
+Weight of character 302    :  10
+Weight of character 303    :  10
+Weight of character 304    :  10
+Weight of character 305    :  10
+Weight of character 306    :  10
+Weight of character 307    :  10
+Weight of character 308    :  10
+Weight of character 309    :  10
+Weight of character 310    :  10
+Weight of character 311    :  10
+Weight of character 312    :  10
+Weight of character 313    :  10
+Weight of character 314    :  10
+Weight of character 315    :  10
+Weight of character 316    :  10
+Weight of character 317    :  10
+Weight of character 318    :  10
+Weight of character 319    :  10
+Weight of character 320    :  10
+Weight of character 321    :  10
+Weight of character 322    :  10
+Weight of character 323    :  10
+Weight of character 324    :  10
+Weight of character 325    :  10
+Weight of character 326    :  10
+Weight of character 327    :  10
+Weight of character 328    :  10
+Weight of character 329    :  10
+Weight of character 330    :  10
+Weight of character 331    :  10
+Weight of character 332    :  10
+Weight of character 333    :  10
+Weight of character 334    :  10
+Weight of character 335    :  10
+Weight of character 336    :  10
+Weight of character 337    :  10
+Weight of character 338    :  10
+Weight of character 339    :  10
+Weight of character 340    :  10
+Weight of character 341    :  10
+Weight of character 342    :  10
+Weight of character 343    :  10
+Weight of character 344    :  10
+Weight of character 345    :  10
+Weight of character 346    :  10
+Weight of character 347    :  10
+Weight of character 348    :  10
+Weight of character 349    :  10
+Weight of character 350    :  10
+Weight of character 351    :  10
+Weight of character 352    :  10
+Weight of character 353    :  10
+Weight of character 354    :  10
+Weight of character 355    :  10
+Weight of character 356    :  10
+Weight of character 357    :  10
+Weight of character 358    :  10
+Weight of character 359    :  10
+Weight of character 360    :  10
+Weight of character 361    :  10
+Weight of character 362    :  10
+Weight of character 363    :  10
+Weight of character 364    :  10
+Weight of character 365    :  10
+Weight of character 366    :  10
+Weight of character 367    :  10
+Weight of character 368    :  10
+Weight of character 369    :  10
+Weight of character 370    :  10
+Weight of character 371    :  10
+Weight of character 372    :  10
+Weight of character 373    :  10
+Weight of character 374    :  10
+Weight of character 375    :  10
+Weight of character 376    :  10
+Weight of character 377    :  10
+Weight of character 378    :  10
+Weight of character 379    :  10
+Weight of character 380    :  10
+Weight of character 381    :  10
+Weight of character 382    :  10
+Weight of character 383    :  10
+Weight of character 384    :  10
+Weight of character 385    :  10
+Weight of character 386    :  10
+Weight of character 387    :  10
+Weight of character 388    :  10
+Weight of character 389    :  10
+Weight of character 390    :  10
+Weight of character 391    :  10
+Weight of character 392    :  10
+Weight of character 393    :  10
+Weight of character 394    :  10
+Weight of character 395    :  10
+Weight of character 396    :  10
+Weight of character 397    :  10
+Weight of character 398    :  10
+Weight of character 399    :  10
+Weight of character 400    :  10
+Weight of character 401    :  10
+Weight of character 402    :  10
+Weight of character 403    :  10
+Weight of character 404    :  10
+Weight of character 405    :  10
+Weight of character 406    :  10
+Weight of character 407    :  10
+**************************************************
+Mapping of character;     1;1     
+Mapping of character;     2;2     
+Mapping of character;     3;3     
+Mapping of character;     4;4     
+Mapping of character;     5;5     
+Mapping of character;     6;6     
+Mapping of character;     7;7     
+Mapping of character;     8;8     
+Mapping of character;     9;9     
+Mapping of character;    10;10    
+Mapping of character;    11;11    
+Mapping of character;    12;12    
+Mapping of character;    13;13    
+Mapping of character;    14;14    
+Mapping of character;    15;15    
+Mapping of character;    16;16    
+Mapping of character;    17;17    
+Mapping of character;    18;18    
+Mapping of character;    19;19    
+Mapping of character;    20;20    
+Mapping of character;    21;21    
+Mapping of character;    22;22    
+Mapping of character;    23;23    
+Mapping of character;    24;24    
+Mapping of character;    25;25    
+Mapping of character;    26;26    
+Mapping of character;    27;27    
+Mapping of character;    28;28    
+Mapping of character;    29;29    
+Mapping of character;    30;30    
+Mapping of character;    31;31    
+Mapping of character;    32;32    
+Mapping of character;    33;33    
+Mapping of character;    34;34    
+Mapping of character;    35;35    
+Mapping of character;    36;36    
+Mapping of character;    37;37    
+Mapping of character;    38;38    
+Mapping of character;    39;39    
+Mapping of character;    40;40    
+Mapping of character;    41;41    
+Mapping of character;    42;42    
+Mapping of character;    43;43    
+Mapping of character;    44;44    
+Mapping of character;    45;45    
+Mapping of character;    46;46    
+Mapping of character;    47;47    
+Mapping of character;    48;48    
+Mapping of character;    49;49    
+Mapping of character;    50;50    
+Mapping of character;    51;51    
+Mapping of character;    52;52    
+Mapping of character;    53;53    
+Mapping of character;    54;54    
+Mapping of character;    55;55    
+Mapping of character;    56;56    
+Mapping of character;    57;57    
+Mapping of character;    58;58    
+Mapping of character;    59;59    
+Mapping of character;    60;60    
+Mapping of character;    61;61    
+Mapping of character;    62;62    
+Mapping of character;    63;63    
+Mapping of character;    64;64    
+Mapping of character;    65;65    
+Mapping of character;    66;66    
+Mapping of character;    67;67    
+Mapping of character;    68;68    
+Mapping of character;    69;69    
+Mapping of character;    70;70    
+Mapping of character;    71;71    
+Mapping of character;    72;72    
+Mapping of character;    73;73    
+Mapping of character;    74;74    
+Mapping of character;    75;75    
+Mapping of character;    76;76    
+Mapping of character;    77;77    
+Mapping of character;    78;78    
+Mapping of character;    79;79    
+Mapping of character;    80;80    
+Mapping of character;    81;81    
+Mapping of character;    82;82    
+Mapping of character;    83;83    
+Mapping of character;    84;84    
+Mapping of character;    85;85    
+Mapping of character;    86;86    
+Mapping of character;    87;87    
+Mapping of character;    88;88    
+Mapping of character;    89;89    
+Mapping of character;    90;90    
+Mapping of character;    91;91    
+Mapping of character;    92;92    
+Mapping of character;    93;93    
+Mapping of character;    94;94    
+Mapping of character;    95;95    
+Mapping of character;    96;96    
+Mapping of character;    97;97    
+Mapping of character;    98;98    
+Mapping of character;    99;99    
+Mapping of character;   100;100   
+Mapping of character;   101;101   
+Mapping of character;   102;102   
+Mapping of character;   103;103   
+Mapping of character;   104;104   
+Mapping of character;   105;105   
+Mapping of character;   106;106   
+Mapping of character;   107;107   
+Mapping of character;   108;108   
+Mapping of character;   109;109   
+Mapping of character;   110;110   
+Mapping of character;   111;111   
+Mapping of character;   112;112   
+Mapping of character;   113;113   
+Mapping of character;   114;114   
+Mapping of character;   115;115   
+Mapping of character;   116;116   
+Mapping of character;   117;117   
+Mapping of character;   118;118   
+Mapping of character;   119;119   
+Mapping of character;   120;120   
+Mapping of character;   121;121   
+Mapping of character;   122;122   
+Mapping of character;   123;123   
+Mapping of character;   124;124   
+Mapping of character;   125;125   
+Mapping of character;   126;126   
+Mapping of character;   127;127   
+Mapping of character;   128;128   
+Mapping of character;   129;129   
+Mapping of character;   130;130   
+Mapping of character;   131;131   
+Mapping of character;   132;132   
+Mapping of character;   133;133   
+Mapping of character;   134;134   
+Mapping of character;   135;135   
+Mapping of character;   136;136   
+Mapping of character;   137;137   
+Mapping of character;   138;138   
+Mapping of character;   139;139   
+Mapping of character;   140;140   
+Mapping of character;   141;141   
+Mapping of character;   142;142   
+Mapping of character;   143;143   
+Mapping of character;   144;144   
+Mapping of character;   145;145   
+Mapping of character;   146;146   
+Mapping of character;   147;147   
+Mapping of character;   148;148   
+Mapping of character;   149;149   
+Mapping of character;   150;150   
+Mapping of character;   151;151   
+Mapping of character;   152;152   
+Mapping of character;   153;153   
+Mapping of character;   154;154   
+Mapping of character;   155;155   
+Mapping of character;   156;156   
+Mapping of character;   157;157   
+Mapping of character;   158;158   
+Mapping of character;   159;159   
+Mapping of character;   160;160   
+Mapping of character;   161;161   
+Mapping of character;   162;162   
+Mapping of character;   163;163   
+Mapping of character;   164;164   
+Mapping of character;   165;165   
+Mapping of character;   166;166   
+Mapping of character;   167;167   
+Mapping of character;   168;168   
+Mapping of character;   169;169   
+Mapping of character;   170;170   
+Mapping of character;   171;171   
+Mapping of character;   172;172   
+Mapping of character;   173;173   
+Mapping of character;   174;174   
+Mapping of character;   175;175   
+Mapping of character;   176;176   
+Mapping of character;   177;177   
+Mapping of character;   178;178   
+Mapping of character;   179;179   
+Mapping of character;   180;180   
+Mapping of character;   181;181   
+Mapping of character;   182;182   
+Mapping of character;   183;183   
+Mapping of character;   184;184   
+Mapping of character;   185;185   
+Mapping of character;   186;186   
+Mapping of character;   187;187   
+Mapping of character;   188;188   
+Mapping of character;   189;189   
+Mapping of character;   190;190   
+Mapping of character;   191;191   
+Mapping of character;   192;192   
+Mapping of character;   193;193   
+Mapping of character;   194;194   
+Mapping of character;   195;195   
+Mapping of character;   196;196   
+Mapping of character;   197;197   
+Mapping of character;   198;198   
+Mapping of character;   199;199   
+Mapping of character;   200;200   
+Mapping of character;   201;201   
+Mapping of character;   202;202   
+Mapping of character;   203;203   
+Mapping of character;   204;204   
+Mapping of character;   205;205   
+Mapping of character;   206;206   
+Mapping of character;   207;207   
+Mapping of character;   208;208   
+Mapping of character;   209;209   
+Mapping of character;   210;210   
+Mapping of character;   211;211   
+Mapping of character;   212;212   
+Mapping of character;   213;213   
+Mapping of character;   214;214   
+Mapping of character;   215;215   
+Mapping of character;   216;216   
+Mapping of character;   217;217   
+Mapping of character;   218;218   
+Mapping of character;   219;219   
+Mapping of character;   220;220   
+Mapping of character;   221;221   
+Mapping of character;   222;222   
+Mapping of character;   223;223   
+Mapping of character;   224;224   
+Mapping of character;   225;225   
+Mapping of character;   226;226   
+Mapping of character;   227;227   
+Mapping of character;   228;228   
+Mapping of character;   229;229   
+Mapping of character;   230;230   
+Mapping of character;   231;231   
+Mapping of character;   232;232   
+Mapping of character;   233;233   
+Mapping of character;   234;234   
+Mapping of character;   235;235   
+Mapping of character;   236;236   
+Mapping of character;   237;237   
+Mapping of character;   238;238   
+Mapping of character;   239;239   
+Mapping of character;   240;240   
+Mapping of character;   241;241   
+Mapping of character;   242;242   
+Mapping of character;   243;243   
+Mapping of character;   244;244   
+Mapping of character;   245;245   
+Mapping of character;   246;246   
+Mapping of character;   247;247   
+Mapping of character;   248;248   
+Mapping of character;   249;249   
+Mapping of character;   250;250   
+Mapping of character;   251;251   
+Mapping of character;   252;252   
+Mapping of character;   253;253   
+Mapping of character;   254;254   
+Mapping of character;   255;255   
+Mapping of character;   256;256   
+Mapping of character;   257;257   
+Mapping of character;   258;258   
+Mapping of character;   259;259   
+Mapping of character;   260;260   
+Mapping of character;   261;261   
+Mapping of character;   262;262   
+Mapping of character;   263;263   
+Mapping of character;   264;264   
+Mapping of character;   265;265   
+Mapping of character;   266;266   
+Mapping of character;   267;267   
+Mapping of character;   268;268   
+Mapping of character;   269;269   
+Mapping of character;   270;270   
+Mapping of character;   271;271   
+Mapping of character;   272;272   
+Mapping of character;   273;273   
+Mapping of character;   274;274   
+Mapping of character;   275;275   
+Mapping of character;   276;276   
+Mapping of character;   277;277   
+Mapping of character;   278;278   
+Mapping of character;   279;279   
+Mapping of character;   280;280   
+Mapping of character;   281;281   
+Mapping of character;   282;282   
+Mapping of character;   283;283   
+Mapping of character;   284;284   
+Mapping of character;   285;285   
+Mapping of character;   286;286   
+Mapping of character;   287;287   
+Mapping of character;   288;288   
+Mapping of character;   289;289   
+Mapping of character;   290;290   
+Mapping of character;   291;291   
+Mapping of character;   292;292   
+Mapping of character;   293;293   
+Mapping of character;   294;294   
+Mapping of character;   295;295   
+Mapping of character;   296;296   
+Mapping of character;   297;297   
+Mapping of character;   298;298   
+Mapping of character;   299;299   
+Mapping of character;   300;300   
+Mapping of character;   301;301   
+Mapping of character;   302;302   
+Mapping of character;   303;303   
+Mapping of character;   304;304   
+Mapping of character;   305;305   
+Mapping of character;   306;306   
+Mapping of character;   307;307   
+Mapping of character;   308;308   
+Mapping of character;   309;309   
+Mapping of character;   310;310   
+Mapping of character;   311;311   
+Mapping of character;   312;312   
+Mapping of character;   313;313   
+Mapping of character;   314;314   
+Mapping of character;   315;315   
+Mapping of character;   316;316   
+Mapping of character;   317;317   
+Mapping of character;   318;318   
+Mapping of character;   319;319   
+Mapping of character;   320;320   
+Mapping of character;   321;321   
+Mapping of character;   322;322   
+Mapping of character;   323;323   
+Mapping of character;   324;324   
+Mapping of character;   325;325   
+Mapping of character;   326;326   
+Mapping of character;   327;327   
+Mapping of character;   328;328   
+Mapping of character;   329;329   
+Mapping of character;   330;330   
+Mapping of character;   331;331   
+Mapping of character;   332;332   
+Mapping of character;   333;333   
+Mapping of character;   334;334   
+Mapping of character;   335;335   
+Mapping of character;   336;336   
+Mapping of character;   337;337   
+Mapping of character;   338;338   
+Mapping of character;   339;339   
+Mapping of character;   340;340   
+Mapping of character;   341;341   
+Mapping of character;   342;342   
+Mapping of character;   343;343   
+Mapping of character;   344;344   
+Mapping of character;   345;345   
+Mapping of character;   346;346   
+Mapping of character;   347;347   
+Mapping of character;   348;348   
+Mapping of character;   349;349   
+Mapping of character;   350;350   
+Mapping of character;   351;351   
+Mapping of character;   352;352   
+Mapping of character;   353;353   
+Mapping of character;   354;354   
+Mapping of character;   355;355   
+Mapping of character;   356;356   
+Mapping of character;   357;357   
+Mapping of character;   358;358   
+Mapping of character;   359;359   
+Mapping of character;   360;360   
+Mapping of character;   361;361   
+Mapping of character;   362;362   
+Mapping of character;   363;363   
+Mapping of character;   364;364   
+Mapping of character;   365;365   
+Mapping of character;   366;366   
+Mapping of character;   367;367   
+Mapping of character;   368;368   
+Mapping of character;   369;369   
+Mapping of character;   370;370   
+Mapping of character;   371;371   
+Mapping of character;   372;372   
+Mapping of character;   373;373   
+Mapping of character;   374;374   
+Mapping of character;   375;375   
+Mapping of character;   376;376   
+Mapping of character;   377;377   
+Mapping of character;   378;378   
+Mapping of character;   379;379   
+Mapping of character;   380;380   
+Mapping of character;   381;381   
+Mapping of character;   382;382   
+Mapping of character;   383;383   
+Mapping of character;   384;384   
+Mapping of character;   385;385   
+Mapping of character;   386;386   
+Mapping of character;   387;387   
+Mapping of character;   388;388   
+Mapping of character;   389;389   
+Mapping of character;   390;390   
+Mapping of character;   391;391   
+Mapping of character;   392;392   
+Mapping of character;   393;393   
+Mapping of character;   394;394   
+Mapping of character;   395;395   
+Mapping of character;   396;396   
+Mapping of character;   397;397   
+Mapping of character;   398;398   
+Mapping of character;   399;399   
+Mapping of character;   400;400   
+Mapping of character;   401;401   
+Mapping of character;   402;402   
+Mapping of character;   403;403   
+Mapping of character;   404;404   
+Mapping of character;   405;405   
+Mapping of character;   406;406   
+Mapping of character;   407;407   
+Mapping of taxon;     1;0696S3
+Other information of taxon;     1;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     2;32G2S1
+Other information of taxon;     2;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     3;98P1G1
+Other information of taxon;     3;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     4;81G2S1
+Other information of taxon;     4;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     5;85G2S1
+Other information of taxon;     5;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     6;05G2S1
+Other information of taxon;     6;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     7;74GSV1
+Other information of taxon;     7;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     8;4GSV11
+Other information of taxon;     8;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;     9;335GS2
+Other information of taxon;     9;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    10;90P1G1
+Other information of taxon;    10;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    11;479889
+Other information of taxon;    11;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    12;672342
+Other information of taxon;    12;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    13;718533
+Other information of taxon;    13;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    14;718534
+Other information of taxon;    14;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    15;718535
+Other information of taxon;    15;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    16;781308
+Other information of taxon;    16;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    17;781309
+Other information of taxon;    17;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    18;781310
+Other information of taxon;    18;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    19;781311
+Other information of taxon;    19;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    20;781312
+Other information of taxon;    20;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    21;781313
+Other information of taxon;    21;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    22;434234
+Other information of taxon;    22;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    23;V-SY18
+Other information of taxon;    23;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    24;J-2018
+Other information of taxon;    24;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    25;460730
+Other information of taxon;    25;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    26;460731
+Other information of taxon;    26;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    27;460732
+Other information of taxon;    27;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    28;460733
+Other information of taxon;    28;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    29;460734
+Other information of taxon;    29;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    30;460735
+Other information of taxon;    30;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    31;460736
+Other information of taxon;    31;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    32;460737
+Other information of taxon;    32;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    33;460738
+Other information of taxon;    33;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    34;460739
+Other information of taxon;    34;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    35;460740
+Other information of taxon;    35;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    36;460741
+Other information of taxon;    36;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    37;660695
+Other information of taxon;    37;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    38;660696
+Other information of taxon;    38;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    39;660697
+Other information of taxon;    39;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    40;660698
+Other information of taxon;    40;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    41;660699
+Other information of taxon;    41;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    42;863253
+Other information of taxon;    42;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    43;682468
+Other information of taxon;    43;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    44;847623
+Other information of taxon;    44;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    45;459800
+Other information of taxon;    45;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    46;847622
+Other information of taxon;    46;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    47;847621
+Other information of taxon;    47;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    48;847620
+Other information of taxon;    48;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    49;715134
+Other information of taxon;    49;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    50;628478
+Other information of taxon;    50;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    51;543947
+Other information of taxon;    51;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    52;306192
+Other information of taxon;    52;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    53;306191
+Other information of taxon;    53;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    54;306190
+Other information of taxon;    54;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    55;899193
+Other information of taxon;    55;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    56;681419
+Other information of taxon;    56;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    57;722600
+Other information of taxon;    57;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    58;722599
+Other information of taxon;    58;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    59;536725
+Other information of taxon;    59;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    60;939589
+Other information of taxon;    60;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    61;939588
+Other information of taxon;    61;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    62;939587
+Other information of taxon;    62;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    63;939586
+Other information of taxon;    63;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    64;939585
+Other information of taxon;    64;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    65;939584
+Other information of taxon;    65;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    66;939583
+Other information of taxon;    66;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    67;605386
+Other information of taxon;    67;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    68;376273
+Other information of taxon;    68;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    69;376272
+Other information of taxon;    69;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    70;376271
+Other information of taxon;    70;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    71;376268
+Other information of taxon;    71;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    72;376267
+Other information of taxon;    72;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    73;376266
+Other information of taxon;    73;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    74;376265
+Other information of taxon;    74;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    75;376264
+Other information of taxon;    75;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    76;376263
+Other information of taxon;    76;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    77;376262
+Other information of taxon;    77;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    78;376261
+Other information of taxon;    78;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    79;376260
+Other information of taxon;    79;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    80;376259
+Other information of taxon;    80;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    81;376258
+Other information of taxon;    81;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    82;376257
+Other information of taxon;    82;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    83;376256
+Other information of taxon;    83;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    84;376255
+Other information of taxon;    84;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    85;376254
+Other information of taxon;    85;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    86;376253
+Other information of taxon;    86;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    87;376252
+Other information of taxon;    87;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    88;376251
+Other information of taxon;    88;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    89;376250
+Other information of taxon;    89;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    90;108571
+Other information of taxon;    90;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    91;799941
+Other information of taxon;    91;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    92;966721
+Other information of taxon;    92;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    93;966720
+Other information of taxon;    93;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    94;966719
+Other information of taxon;    94;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    95;966718
+Other information of taxon;    95;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    96;966717
+Other information of taxon;    96;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    97;966716
+Other information of taxon;    97;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    98;966715
+Other information of taxon;    98;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;    99;966714
+Other information of taxon;    99;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;   100;UKRA24
+Other information of taxon;   100;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;   101;UKRA20
+Other information of taxon;   101;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;   102;UKRA12
+Other information of taxon;   102;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;   103;UKRA10
+Other information of taxon;   103;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;   104;UKRA23
+Other information of taxon;   104;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   1;mv   1
+Other information of taxon;mv   1;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   2;mv   2
+Other information of taxon;mv   2;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   3;mv   3
+Other information of taxon;mv   3;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   4;mv   4
+Other information of taxon;mv   4;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   5;mv   5
+Other information of taxon;mv   5;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   6;mv   6
+Other information of taxon;mv   6;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   7;mv   7
+Other information of taxon;mv   7;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   8;mv   8
+Other information of taxon;mv   8;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv   9;mv   9
+Other information of taxon;mv   9;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv  10;mv  10
+Other information of taxon;mv  10;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv  11;mv  11
+Other information of taxon;mv  11;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
+Mapping of taxon;mv  12;mv  12
+Other information of taxon;mv  12;Phenotype;;Geography;;Lineage;;Group1;;Group2;;Group3;;
