@@ -5,6 +5,7 @@ library(igraph)
 library(lubridate)
 library(maptools)
 library(MetBrewer)
+library(pegas)
 library(RColorBrewer)
 library(raster)
 library(rgeos)
@@ -235,7 +236,7 @@ for (i in 1:dim(sampling)[1])
 rect(-13, 35, 55, 73, lwd=0.2, border="gray30")
 dev.off()
 
-# 3. Generating an haplotype network for the global data set (Network)
+# 3. Generating an haplotype network and estimating nucleotide diversities
 
 source("networkGraph_SPADS.r")
 network_out = "ASFV_alignment_4.out"
@@ -243,6 +244,33 @@ populations = "ASFV_Network_pops.csv"
 colour_code = "ASFV_Network_cols.csv"
 scaleFactor1 = 4; scaleFactor2 = 1
 networkGraph_SPADS(network_out, populations, colour_code, scaleFactor1, scaleFactor2)
+
+pops = read.csv("ASFV_Network_pops.csv", head=F, sep=";")
+different_pops = unique(pops[,2]); different_pops = different_pops[order(different_pops)]
+seqs = read.dna("ASFV_alignment_4.phy")
+for (i in 1:length(different_pops))
+	{
+		pop_seqs1 = pops[which(pops[,2]==different_pops[i]),1]
+		if (length(pop_seqs1) >= 5)
+			{
+				pop_seqs2 = seqs[pop_seqs1,]
+				pi = pegas::nuc.div(pop_seqs2, variance=F, pairwise.deletion=T)
+				cat(different_pops[i],": ",round(pi,3),", ",sep="")
+			}   # Africa: 0.142, Germany: 0.004, Italy: 0.009, Lithuania: 0.027,
+				# Poland: 0.021, Russia: 0.027, Serbia: 0.008, Ukraine: 0.015
+	}
+seqs = read.dna("ASFV_alignment_1.phy")
+for (i in 1:length(different_pops))
+	{
+		pop_seqs1 = pops[which(pops[,2]==different_pops[i]),1]
+		if (length(pop_seqs1) >= 5)
+			{
+				pop_seqs2 = seqs[pop_seqs1,]
+				pi = pegas::nuc.div(pop_seqs2, variance=F, pairwise.deletion=T)
+				cat(different_pops[i],": ",round(pi,10),", ",sep="") # 10^-5:
+			}   # Africa: 39.81, Germany: 1.05, Italy: 2.87, Lithuania: 6.04,
+				# Poland: 6.13, Russia: 6.53, Serbia: 3.13, Ukraine: 3.61
+	}
 
 # 4. Testing for a signal of recombination within the global alignment
 
@@ -965,8 +993,6 @@ for (i in 1:nberOfExtractionFiles)
 saveRDS(matrices, "Alignment_1804e_DTA/ASFV_1000_trees.rds")
 matrices = readRDS("Alignment_1804e_DTA/ASFV_1000_trees.rds")
 
-	#### EDITED UNTIL HERE (Fabiana working on the tips swapping XML file) ####
-
 log1 = read.table(paste0("Alignment_1804e_DTA/ASFV_1000_trees.log"), header=T, sep="\t") # original DTA
 log2 = read.table(paste0("Alignment_1804e_DTA/ASFV_1000t_tipS.log"), header=T, sep="\t") # tips swapping
 BFs1 = matrix(nrow=length(countries), ncol=length(countries)); row.names(BFs1) = countries; colnames(BFs1) = countries
@@ -1065,3 +1091,4 @@ dev.off()	# Mean transition rates:
 			# 	- Poland - Lithuania: 2.53
 			# 	- Poland - Ukraine: 1.31
 			# 	- Serbia - Italy: 2.09
+
