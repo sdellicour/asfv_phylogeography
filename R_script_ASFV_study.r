@@ -579,6 +579,7 @@ for (i in 0:nberOfExtractionFiles)
 					}
 			}
 	}
+nberOfExtractionFiles = 1000
 csv1 = read.csv("Alignment_1804f_RRW/ASFV_1000_trees.csv", head=T)
 csv2 = csv1[which((csv1[,"startO174L"]=="yes")&(csv1[,"endO174L"]=="yes")),]
 write.csv(csv2, "Alignment_1804f_RRW/ASFV_with_O174L.csv", row.names=F, quote=F)
@@ -590,20 +591,32 @@ for (i in 1:nberOfExtractionFiles)
 		write.csv(csv2, paste0("Alignment_1804f_RRW/ASFV_1000_wi_O174L/TreeExtractions_",i,".csv"), row.names=F, quote=F)
 		write.csv(csv3, paste0("Alignment_1804f_RRW/ASFV_1000_wo_O174L/TreeExtractions_",i,".csv"), row.names=F, quote=F)
 	}
+csv1 = read.csv("Alignment_1804f_RRW/ASFV_1000_trees.csv", head=T)
+csv2 = csv1[which((csv1[,"startLon"]<100)&(csv1[,"endLon"]<100)),]
+write.csv(csv2, "Alignment_1804f_RRW/ASFV_West_Palea.csv", row.names=F, quote=F)
+for (i in 1:nberOfExtractionFiles)
+	{
+		csv1 = read.csv(paste0("Alignment_1804f_RRW/ASFV_1000_trees_ext/TreeExtractions_",i,".csv"), head=T)
+		csv2 = csv1[which((csv1[,"startLon"]<100)&(csv1[,"endLon"]<100)),]
+		write.csv(csv2, paste0("Alignment_1804f_RRW/ASFV_1000_West_Pal/TreeExtractions_",i,".csv"), row.names=F, quote=F)
+	}
 
-nberOfExtractionFiles = 1000; timeSlices = 100; onlyTipBranches = F; showingPlots = F; nberOfCores = 1; slidingWindow = 1
+nberOfExtractionFiles = 1000; timeSlices = 100; onlyTipBranches = F; showingPlots = F; nberOfCores = 5; slidingWindow = 1
 localTreesDirectory = paste0("Alignment_1804f_RRW/ASFV_1000_trees_ext"); outputName = paste0("Alignment_1804f_RRW/All_dispersal_statistics/All_branches")
 spreadStatistics(localTreesDirectory, nberOfExtractionFiles, timeSlices, onlyTipBranches, showingPlots, outputName, nberOfCores, slidingWindow)
 localTreesDirectory = paste0("Alignment_1804f_RRW/ASFV_1000_trees_ext"); outputName = paste0("Alignment_1804f_RRW/All_dispersal_statistics/With_O174L")
 spreadStatistics(localTreesDirectory, nberOfExtractionFiles, timeSlices, onlyTipBranches, showingPlots, outputName, nberOfCores, slidingWindow)
 localTreesDirectory = paste0("Alignment_1804f_RRW/ASFV_1000_trees_ext"); outputName = paste0("Alignment_1804f_RRW/All_dispersal_statistics/Without_O174L")
 spreadStatistics(localTreesDirectory, nberOfExtractionFiles, timeSlices, onlyTipBranches, showingPlots, outputName, nberOfCores, slidingWindow)
+localTreesDirectory = paste0("Alignment_1804f_RRW/ASFV_1000_West_Pal"); outputName = paste0("Alignment_1804f_RRW/All_dispersal_statistics/West_Palea")
+spreadStatistics(localTreesDirectory, nberOfExtractionFiles, timeSlices, onlyTipBranches, showingPlots, outputName, nberOfCores, slidingWindow)
 
 mat = read.table("Alignment_1804f_RRW/All_dispersal_statistics/All_branches_estimated_dispersal_statistics.txt", head=T)
+mat = read.table("Alignment_1804f_RRW/All_dispersal_statistics/West_Palea_estimated_dispersal_statistics.txt", head=T)
 vS1 = mat[,"weighted_diffusion_coefficient"]; HPD1 = round(HDInterval::hdi(vS1)[1:2],0)
 vS2 = mat[,"isolation_by_distance_signal_rS"]; HPD2 = round(HDInterval::hdi(vS2)[1:2],3)
 cat("WDC = ",round(median(vS1),0)," km2/year (95% HPD = [",HPD1[1],", ",HPD1[2],"])",sep="")
-	# WDC = 86235 km2/year (95% HPD = [54399, 117960])
+	# WDC = 18410 km2/year (95% HPD = [11879, 27043])
 cat("IBD (rS) = ",round(median(vS2),3)," (95% HPD = [",HPD2[1],", ",HPD2[2],"])",sep="")
 	# IBD (rS) = 0.608 (95% HPD = [0.546, 0.657])
 
@@ -865,7 +878,7 @@ dev.off()
 
 # 10. Mapping the inferred dispersal history of ASFV lineages (DTA analysis)
 
-nberOfTreesToSample = 1000; burnIn = 1001
+nberOfTreesToSample = 1000; burnIn = 1001; mostRecentSamplingDatum = 2022.6383561643836
 log = scan(paste0("Alignment_1804e_DTA/Alignment_18042024/Alignment_180424e_1.log"), what="", sep="\n", quiet=T, blank.lines.skip=F)
 index1 = 6+burnIn; index2 = length(log); interval = round((index2-index1)/nberOfTreesToSample)
 indices = seq(index2-((nberOfTreesToSample-1)*interval),index2,interval)
@@ -883,7 +896,6 @@ selected_trees = c(trees[c(1:index1,indices)],"End;")
 write(selected_trees, paste0("Alignment_1804e_DTA/ASFV_1000_trees.trees"))
 
 mcc_tre = readAnnotatedNexus("Alignment_1804e_DTA/ASFV_1000_trees.tree")
-mostRecentSamplingDatum = 2022.6383561643836
 mcc = read.csv(paste0("Alignment_1804f_RRW/ASFV_1000_trees.csv"), head=T)
 mcc = mcc[order(mcc[,"startYear"]),]; mcc1 = mcc[1,]; mcc2 = mcc[c(2:dim(mcc)[1]),]
 mcc2 = mcc2[order(mcc2[,"endYear"]),]; mcc = rbind(mcc1,mcc2)
