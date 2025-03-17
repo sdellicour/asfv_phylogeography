@@ -30,7 +30,9 @@ different_countries = unique(tab[,"admin0"])[order(unique(tab[,"admin0"]))]
 african_countries = c("Ghana","Madagascar","Malawi","Mauritius","Mozambique","Nigeria","South Africa","Tanzania","Zimbabwe")
 different_locations = different_countries; different_locations[different_locations%in%african_countries] = "Africa"
 different_locations = unique(different_locations); different_locations = different_locations[order(different_locations)]
-different_colours = c("gray80", colorRampPalette(brewer.pal(11,"Spectral"))(length(different_locations)-1))
+different_colours_1 = c("gray80", colorRampPalette(brewer.pal(11,"Spectral"))(length(different_locations)-1))
+different_hostTypes = c("domestic pig","wild boar","unknown")
+different_colours_2 = c(met.brewer(name="Hiroshige",n=111,type="continuous")[c(30,75)],"gray80")
 
 e_Palearctic = extent(-13, 150, 35, 73); e_Europe = extent(-13, 55, 35, 73)
 countries1 = crop(gBuffer(shapefile("World_countries_shps/World_countries_shapefile.shp") , byid=T, width=0), e_Palearctic)
@@ -150,15 +152,22 @@ for (i in 1:length(IDs))
 		txt4 = c(txt4, paste0(IDs[i],"   ",paste(seqs4[i,],collapse="")))
 	}
 if (writingFiles) write(txt4, "ASFV_alignment_4.phy") # only with the polymorphic sites
-metadata = matrix(nrow=length(IDs), ncol=5); metadata[,1] = IDs
+metadata1 = matrix(nrow=length(IDs), ncol=5); metadata1[,1] = IDs
+metadata2 = matrix(nrow=length(IDs), ncol=5); metadata2[,1] = IDs
 for (i in 1:length(IDs))
 	{
 		index1 = which(row.names(tab)==IDs[i])
 		location = tab[index1,"admin0"]
 		if (location%in%african_countries) location = "Africa"
 		index2 = which(different_locations==location)
-		metadata[i,2] = location
-		metadata[i,3] = different_colours[index2]
+		metadata1[i,2] = location
+		metadata1[i,3] = different_colours_1[index2]
+		index1 = which(row.names(tab)==IDs[i])
+		hostType = tab[index1,"host_species"]
+		if (hostType == "") hostType = "unknown"
+		index2 = which(different_hostTypes==hostType)
+		metadata2[i,2] = hostType
+		metadata2[i,3] = different_colours_2[index2]
 	}
 decimalDates = rep(NA, length(collectionDates))
 for (i in 1:length(decimalDates))
@@ -185,30 +194,58 @@ if (savingPlots)
 			 legend.args=list(text="", cex=0.8, line=0.3, col="gray30"), horizontal=F,
 		     axis.args=list(cex.axis=0.8, lwd=0, lwd.tick=0.2, tck=-0.6, col.axis="gray30", line=0, mgp=c(0,0.5,0)))
 	}
-cols = colourScale[colIndices]; metadata[,4] = decimalDates; metadata[,5] = cols
-populations = cbind(different_locations, different_colours)
-if (writingFiles) write.table(metadata, "ASFV_alignment_4.csv", col.names=F, row.names=F, quote=F, sep=";")
-if (writingFiles) write.table(metadata[,1:2], "ASFV_Network_pops.csv", col.names=F, row.names=F, quote=F, sep=";")
-if (writingFiles) write.table(populations, "ASFV_Network_cols.csv", col.names=F, row.names=F, quote=F, sep=";")
+cols = colourScale[colIndices]; metadata1[,4] = decimalDates; metadata2[,4] = decimalDates; metadata1[,5] = cols; metadata2[,5] = cols
+populations = cbind(different_locations, different_colours_1); hostTypes = cbind(different_hostTypes, different_colours_2)
+if (writingFiles) write.table(metadata1, "ASFV_alignment_4.csv", col.names=F, row.names=F, quote=F, sep=";")
+if (writingFiles) write.table(metadata1[,1:2], "ASFV_network_pop1.csv", col.names=F, row.names=F, quote=F, sep=";")
+if (writingFiles) write.table(populations, "ASFV_network_col1.csv", col.names=F, row.names=F, quote=F, sep=";")
+if (writingFiles) write.table(metadata2[,1:2], "ASFV_network_pop2.csv", col.names=F, row.names=F, quote=F, sep=";")
+if (writingFiles) write.table(hostTypes, "ASFV_network_col2.csv", col.names=F, row.names=F, quote=F, sep=";")
 
 # 2. Generating an overall sampling map for all the samples
 
-all_coordinates = rep(NA, dim(tab)[1])
+all_coordinates = rep(NA, dim(tab)[1]); all_hostTypes = tab[,"host_species"]
+all_hostTypes[which(all_hostTypes=="")] = "unknown"
 for (i in 1:dim(tab)[1]) all_coordinates[i] = paste0(tab[i,"latitude"],", ",tab[i,"longitude"])
-unique_coordinates = unique(all_coordinates); sampling = as.data.frame(matrix(nrow=length(unique_coordinates), ncol=5))
-colnames(sampling) = c("longitude","latitude","location","colour","samples")
-for (i in 1:dim(sampling)[1])
+unique_coordinates = unique(all_coordinates)
+sampling1 = as.data.frame(matrix(nrow=length(unique_coordinates), ncol=5))
+colnames(sampling1) = c("longitude","latitude","location","colour","samples")
+sampling2 = as.data.frame(matrix(nrow=length(unique_coordinates), ncol=5))
+colnames(sampling2) = c("longitude","latitude","hostType","colour","samples")
+for (i in 1:dim(sampling1)[1])
 	{
-		sampling[i,1] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[2])
-		sampling[i,2] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[1])
+		sampling1[i,1] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[2])
+		sampling1[i,2] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[1])
 		indices = which(all_coordinates==unique_coordinates[i])
-		location = tab[indices[1],"admin0"]; sampling[i,5] = length(indices)
+		location = tab[indices[1],"admin0"]; sampling1[i,5] = length(indices)
 		if (location%in%african_countries) location = "Africa"
-		sampling[i,3] = location
+		sampling1[i,3] = location
 		index = which(different_locations==location)
-		sampling[i,4] = different_colours[index]
+		sampling1[i,4] = different_colours_1[index]
+		sampling2[i,1] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[2])
+		sampling2[i,2] = as.numeric(unlist(strsplit(unique_coordinates[i],", "))[1])
+		indices = which(all_coordinates==unique_coordinates[i])
+		location = tab[indices[1],"admin0"]; sampling2[i,5] = length(indices)
+		if (location%in%african_countries) location = "Africa"
+		if (length(indices) > 1)
+			{
+				differentHosts = c(location)
+				for (j in 1:length(indices))
+					{
+						differentHosts = c(differentHosts, tab[indices[j],"host_species"])
+					}
+				print(differentHosts)
+			}
+		hostType = tab[indices[1],"host_species"]
+		if (hostType == "") hostType = "unknown"
+		sampling2[i,3] = hostType
+		index = which(different_hostTypes==hostType)
+		sampling2[i,4] = different_colours_2[index]
 	}
-sampling = sampling[which(!is.na(sampling[,1])),]
+sampling1 = sampling1[which(!is.na(sampling1[,1])),]
+sampling2 = sampling2[which(!is.na(sampling2[,1])),]
+sampling2=sampling2[order(sampling2[,"hostType"], decreasing=T),]
+
 pdf("ASFV_sampling_m1.pdf", width=8, height=3.5)
 par(oma=c(0,0,0,0), mar=c(1,1,1,0.5), lwd=0.2, col="gray30")
 plot(countries1, col="gray90", border=NA, ann=F, axes=F)
@@ -216,9 +253,9 @@ plot(borders1, col="white", lwd=0.3, add=T)
 plot(coasts1, col="gray70", lwd=0.5, add=T)
 for (i in 1:dim(sampling)[1])
 	{
-		cex = (((sqrt(sampling[i,5]/pi))*2)/((sqrt(1/pi))*2))*0.75
-		points(sampling[i,1:2], col=sampling[i,4], cex=cex, pch=16)
-		points(sampling[i,1:2], cex=cex, pch=1, lwd=0.5, col="gray30")
+		cex = (((sqrt(sampling1[i,5]/pi))*2)/((sqrt(1/pi))*2))*0.75
+		points(sampling1[i,1:2], col=sampling1[i,4], cex=cex, pch=16)
+		points(sampling1[i,1:2], cex=cex, pch=1, lwd=0.5, col="gray30")
 	}
 rect(-13, 35, 150, 73, lwd=0.2, border="gray30")
 dev.off()
@@ -227,11 +264,24 @@ par(oma=c(0,0,0,0), mar=c(1,1,1,0.4), lwd=0.2, col="gray30")
 plot(countries2, col="gray90", border=NA, ann=F, axes=F)
 plot(borders2, col="white", lwd=0.3, add=T)
 plot(coasts2, col="gray70", lwd=0.5, add=T)
-for (i in 1:dim(sampling)[1])
+for (i in 1:dim(sampling1)[1])
 	{
-		cex = (((sqrt(sampling[i,5]/pi))*2)/((sqrt(1/pi))*2))*0.75
-		points(sampling[i,1:2], col=sampling[i,4], cex=cex, pch=16)
-		points(sampling[i,1:2], cex=cex, pch=1, lwd=0.5, col="gray30")
+		cex = (((sqrt(sampling1[i,5]/pi))*2)/((sqrt(1/pi))*2))*0.75
+		points(sampling1[i,1:2], col=sampling1[i,4], cex=cex, pch=16)
+		points(sampling1[i,1:2], cex=cex, pch=1, lwd=0.5, col="gray30")
+	}
+rect(-13, 35, 55, 73, lwd=0.2, border="gray30")
+dev.off()
+pdf("ASFV_sampling_m3.pdf", width=5.3, height=5)
+par(oma=c(0,0,0,0), mar=c(1,1,1,0.4), lwd=0.2, col="gray30")
+plot(countries2, col="gray90", border=NA, ann=F, axes=F)
+plot(borders2, col="white", lwd=0.3, add=T)
+plot(coasts2, col="gray70", lwd=0.5, add=T)
+for (i in 1:dim(sampling2)[1])
+	{
+		cex = (((sqrt(sampling2[i,5]/pi))*2)/((sqrt(1/pi))*2))*0.75
+		points(sampling2[i,1:2], col=sampling2[i,4], cex=cex, pch=16)
+		points(sampling2[i,1:2], cex=cex, pch=1, lwd=0.5, col="gray30")
 	}
 rect(-13, 35, 55, 73, lwd=0.2, border="gray30")
 dev.off()
@@ -239,10 +289,10 @@ dev.off()
 # 3. Generating an haplotype network and estimating nucleotide diversities
 
 source("networkGraph_SPADS.r")
-network_out = "ASFV_alignment_4.out"
-populations = "ASFV_Network_pops.csv"
-colour_code = "ASFV_Network_cols.csv"
-scaleFactor1 = 4; scaleFactor2 = 1
+scaleFactor1 = 4; scaleFactor2 = 1; network_out = "ASFV_alignment_4.out"
+populations = "ASFV_network_pop1.csv"; colour_code = "ASFV_network_col1.csv"
+networkGraph_SPADS(network_out, populations, colour_code, scaleFactor1, scaleFactor2)
+populations = "ASFV_network_pop2.csv"; colour_code = "ASFV_network_col2.csv"
 networkGraph_SPADS(network_out, populations, colour_code, scaleFactor1, scaleFactor2)
 
 pops = read.csv("ASFV_Network_pops.csv", head=F, sep=";")
@@ -306,7 +356,7 @@ for (i in 1:dim(tre$edge)[1])
 		if (!tre$edge[i,2]%in%tre$edge[,1])
 			{
 				country = tab[which(tab[,"seqID"]==gsub("  ","",tre$tip.label[tre$edge[i,2]])),"admin0"]
-				colour = different_colours[which(different_countries==country)]
+				colour = different_colours_1[which(different_countries==country)]
 				nodelabels(node=tre$edge[i,2], pch=16, cex=0.70, col=colour)
 				nodelabels(node=tre$edge[i,2], pch=1, cex=0.70, col="gray30", lwd=0.4)
 			}	else	{
@@ -424,7 +474,7 @@ for (i in 1:dim(tre$edge)[1])
 			{
 				location = tab[which(tab[,"seqID"]==gsub("  ","",tre$tip.label[tre$edge[i,2]])),"admin0"]
 				if (location%in%african_countries) location = "Africa"
-				colour = different_colours[which(different_locations==location)]
+				colour = different_colours_1[which(different_locations==location)]
 				nodelabels(node=tre$edge[i,2], pch=16, cex=0.70, col=colour)
 				nodelabels(node=tre$edge[i,2], pch=1, cex=0.70, col="gray30", lwd=0.4)
 			}	else	{
@@ -435,6 +485,34 @@ for (i in 1:dim(tre$edge)[1])
 			}
 	}
 add.scale.bar(x=0.00005, y=1.1, length=NULL, ask=F, lwd=0.5 , lcol ="gray30", cex=0.6)
+dev.off()
+
+pdf("Temporal_signals_NEW.pdf", width=8, height=3.2) # dev.new(width=8, height=3.2)
+par(mfrow=c(1,2), oma=c(0,0.1,0,0), mar=c(2.5,2.5,0.5,0.5), lwd=0.4, col="gray30")
+tab1 = read.table("TempEst_180424d.txt", head=T, sep="\t"); lm1 = lm("distance ~ date", data=tab1)
+tab2 = read.table("TempEst_180424e.txt", head=T, sep="\t"); lm2 = lm("distance ~ date", data=tab2)
+lm1_R2 = round(summary(lm1)$r.squared, 2); lm2_R2 = round(summary(lm2)$r.squared, 2)
+col1 = rgb(70,118,187,220,maxColorValue=255); col2 = rgb(70,118,187,100,maxColorValue=255) # blue
+plot(tab1[,"date"], tab1[,"distance"], xlab=NA, ylab=NA, frame=T, axes=F, col=NA, pch=16, cex=0.9)
+abline(lm1, lwd=0.6, lty=1, col=rgb(222,67,39,220,maxColorValue=255)) # red
+points(tab1[,"date"], tab1[,"distance"], pch=16, cex=0.9, col="white")
+points(tab1[,"date"], tab1[,"distance"], pch=16, cex=0.9, col=col2)
+points(tab1[,"date"], tab1[,"distance"], pch=1, cex=0.9, col=col1, lwd=0.4); ats = c(0,0.0003,0.0006,0.0009)
+axis(side=1, lwd.tick=0.4, cex.axis=0.7, lwd=0, tck=-0.023, col="gray30", col.axis="gray30", col.tick="gray30", mgp=c(0,0.12,0)); options(scipen=9)
+axis(side=2, lwd.tick=0.4, cex.axis=0.7, lwd=0, tck=-0.023, col="gray30", col.axis="gray30", col.tick="gray30", mgp=c(0,0.31,0), at=ats, label=as.character(ats))
+mtext(expression("R"^"2"*" = 0.04"), line=-1.5, cex=0.75, col=rgb(222,67,39,220,maxColorValue=255)) # red
+title(xlab="Time", col.lab="gray30", cex.lab=0.8, mgp=c(1.1,0,0))
+title(ylab="Root-to-tip divergence", col.lab="gray30", cex.lab=0.8, mgp=c(1.5,0,0))
+plot(tab2[,"date"], tab2[,"distance"], xlab=NA, ylab=NA, frame=T, axes=F, col=NA, pch=16, cex=0.9)
+abline(lm2, lwd=0.6, lty=1, col=rgb(222,67,39,220,maxColorValue=255)) # red
+points(tab2[,"date"], tab2[,"distance"], pch=16, cex=0.9, col="white")
+points(tab2[,"date"], tab2[,"distance"], pch=16, cex=0.9, col=col2)
+points(tab2[,"date"], tab2[,"distance"], pch=1, cex=0.9, col=col1, lwd=0.4)
+axis(side=1, lwd.tick=0.4, cex.axis=0.7, lwd=0, tck=-0.023, col="gray30", col.axis="gray30", col.tick="gray30", mgp=c(0,0.12,0))
+axis(side=2, lwd.tick=0.4, cex.axis=0.7, lwd=0, tck=-0.023, col="gray30", col.axis="gray30", col.tick="gray30", mgp=c(0,0.31,0))
+mtext(expression("R"^"2"*" = 0.50"), line=-1.5, cex=0.75, col=rgb(222,67,39,220,maxColorValue=255)) # red
+title(xlab="Time", col.lab="gray30", cex.lab=0.8, mgp=c(1.1,0,0))
+title(ylab="Root-to-tip divergence", col.lab="gray30", cex.lab=0.8, mgp=c(1.5,0,0))
 dev.off()
 
 mat1 = read.table("Alignment_180424e.txt", head=T, sep="\t")
@@ -614,11 +692,11 @@ spreadStatistics(localTreesDirectory, nberOfExtractionFiles, timeSlices, onlyTip
 mat = read.table("Alignment_1804f_RRW/All_dispersal_statistics/All_branches_estimated_dispersal_statistics.txt", head=T)
 mat = read.table("Alignment_1804f_RRW/All_dispersal_statistics/West_Palea_estimated_dispersal_statistics.txt", head=T)
 vS1 = mat[,"weighted_diffusion_coefficient"]; HPD1 = round(HDInterval::hdi(vS1)[1:2],0)
-vS2 = mat[,"isolation_by_distance_signal_rS"]; HPD2 = round(HDInterval::hdi(vS2)[1:2],3)
+vS2 = mat[,"isolation_by_distance_signal_rP2"]; HPD2 = round(HDInterval::hdi(vS2)[1:2],3)
 cat("WDC = ",round(median(vS1),0)," km2/year (95% HPD = [",HPD1[1],", ",HPD1[2],"])",sep="")
 	# WDC = 18410 km2/year (95% HPD = [11879, 27043])
-cat("IBD (rS) = ",round(median(vS2),3)," (95% HPD = [",HPD2[1],", ",HPD2[2],"])",sep="")
-	# IBD (rS) = 0.608 (95% HPD = [0.546, 0.657])
+cat("IBD (rP2) = ",round(median(vS2),3)," (95% HPD = [",HPD2[1],", ",HPD2[2],"])",sep="")
+	# IBD (rP2) = 0.608 (95% HPD = [0.546, 0.657])
 
 # 9. Mapping the inferred dispersal history of ASFV lineages (RRW analysis)
 
@@ -883,10 +961,14 @@ log = scan(paste0("Alignment_1804e_DTA/Alignment_18042024/Alignment_180424e_1.lo
 index1 = 6+burnIn; index2 = length(log); interval = round((index2-index1)/nberOfTreesToSample)
 indices = seq(index2-((nberOfTreesToSample-1)*interval),index2,interval)
 write(log[c(5,indices)], paste0("Alignment_1804e_DTA/ASFV_1000_trees.log"))
-log = scan(paste0("Alignment_1804e_DTA/Alignment_180424TS/Alignment_1804TSe_1.log"), what="", sep="\n", quiet=T, blank.lines.skip=F)
+log = scan(paste0("Alignment_1804e_DTA/Alignment_180424TS1/Alignment_1804TSe_1.log"), what="", sep="\n", quiet=T, blank.lines.skip=F)
 index1 = 5+burnIn; index2 = length(log); interval = round((index2-index1)/nberOfTreesToSample)
 indices = seq(index2-((nberOfTreesToSample-1)*interval),index2,interval)
-write(log[c(4,indices)], paste0("Alignment_1804e_DTA/ASFV_1000t_tipS.log"))
+write(log[c(4,indices)], paste0("Alignment_1804e_DTA/ASFV_1000t_tipS1.log"))
+log = scan(paste0("Alignment_1804e_DTA/Alignment_180424TS2/Alignment_1804TSe_1.log"), what="", sep="\n", quiet=T, blank.lines.skip=F)
+index1 = 5+burnIn; index2 = length(log); interval = round((index2-index1)/nberOfTreesToSample)
+indices = seq(index2-((nberOfTreesToSample-1)*interval),index2,interval)
+write(log[c(4,indices)], paste0("Alignment_1804e_DTA/ASFV_1000t_tipS2.log"))
 trees = scan(paste0("Alignment_1804e_DTA/Alignment_18042024/Alignment_180424e_1.trees"), what="", sep="\n", quiet=T, blank.lines.skip=F)
 index1 = which(trees=="\t\t;")[length(which(trees=="\t\t;"))]; index2 = index1 + burnIn + 1
 indices3 = which(grepl("tree STATE",trees)); index3 = indices3[length(indices3)]
@@ -894,6 +976,22 @@ interval = floor((index3-(index1+burnIn))/nberOfTreesToSample)
 indices = seq(index3-((nberOfTreesToSample-1)*interval),index3,interval)
 selected_trees = c(trees[c(1:index1,indices)],"End;")
 write(selected_trees, paste0("Alignment_1804e_DTA/ASFV_1000_trees.trees"))
+trees = scan(paste0("Alignment_1804e_DTA/Alignment_180424TS2/Alignment_1804TSe_1.trees"), what="", sep="\n", quiet=T, blank.lines.skip=F)
+index1 = which(trees=="\t\t;")[length(which(trees=="\t\t;"))]; index2 = index1 + burnIn + 1
+indices3 = which(grepl("tree STATE",trees)); index3 = indices3[length(indices3)]
+interval = floor((index3-(index1+burnIn))/nberOfTreesToSample)
+indices = seq(index3-((nberOfTreesToSample-1)*interval),index3,interval)
+selected_trees = c(trees[c(1:index1,indices)],"End;")
+write(selected_trees, paste0("Alignment_1804e_DTA/ASFV_1000t_tipS2.trees"))
+
+p = 0.862 # for Georgia, retrieved from the MCC tree "ASFV_1000_trees.tree" in FigTree
+swap_trees = readAnnotatedNexus("Alignment_1804e_DTA/ASFV_1000t_tipS2.trees"); q = 0
+for (i in 1:length(swap_trees))
+	{
+		root_location = swap_trees[[i]]$root.annotation$location
+		if (root_location == "Georgia") q = q+1
+	}
+q = q/length(swap_trees); adjusted_BF = (p/(1-p))/(q/(1-q)) # 514.3
 
 mcc_tre = readAnnotatedNexus("Alignment_1804e_DTA/ASFV_1000_trees.tree")
 mcc = read.csv(paste0("Alignment_1804f_RRW/ASFV_1000_trees.csv"), head=T)
@@ -906,15 +1004,15 @@ for (i in 1:length(mcc_tre$annotations)) countries = c(countries, mcc_tre$annota
 countries = unique(countries); countries = countries[order(countries)]
 countries = countries[c(1,3,4,5,6,7,8,9,12,13,14,2,10,11,15,18,16,17)]
 russian_locations = c("Armur","Kaliningrad","Karbardino-Balkaria","Primorsky","Ulyanovsk")
-colours = rep(NA, length(countries))
+colours_1 = rep(NA, length(countries)); colours_2 = different_colours_2
 for (i in 1:length(colours))
 	{
 		country = countries[i]
 		if (country%in%russian_locations) country = "Russia"
-		colours[i] = different_colours[which(different_locations==country)]
+		colours_1[i] = different_colours_1[which(different_locations==country)]
 	}
-root_countries_prob = matrix(0,nrow=1, ncol=length(countries))
-countries_prob = matrix(0,nrow=length(mcc_tre$annotations), ncol=length(countries))
+root_countries_prob = matrix(0, nrow=1, ncol=length(countries))
+countries_prob = matrix(0, nrow=length(mcc_tre$annotations), ncol=length(countries))
 colnames(root_countries_prob) = countries; colnames(countries_prob) = countries
 index = which(different_countries == mcc_tre$root.annotation$location); root_node_col = colours[index]
 for (i in 1:length(mcc_tre$root.annotation$location.set))
@@ -980,6 +1078,45 @@ axis(lwd=0.3, at=selectedDates-root_time, labels=selectedLabels, cex.axis=0.60, 
 	 col.lab="gray30", col="gray30", tck=-0.010, side=1)
 dev.off()
 
+pdf(paste0("Alignment_180424e_NEW3.pdf"), width=5.0, height=4.05); # dev.new(width=3.5, height=4.05)
+par(mar=c(1,0,0,0.5), oma=c(0,0,0,0), mgp=c(0,0.1,0), lwd=0.2, bty="o", col="gray30")
+plot(mcc_tre, show.tip.label=F, show.node.label=F, edge.width=0.5, cex=0.6, align.tip.label=3, 
+	 x.lim=c(minYear-(maxYear-max(nodeHeights(mcc_tre))), max(nodeHeights(mcc_tre))), col="gray30", edge.color="gray30")
+mcc_tre_obj = get("last_plot.phylo", envir=.PlotPhyloEnv); rootBarPlotted = FALSE
+gray90_transparent = rgb(229, 229, 229, 150, names=NULL, maxColorValue=255)
+for (j in 1:dim(mcc_tre$edge)[1])
+	{
+		if ((mcc_tre$edge[j,2]%in%mcc_tre$edge[,1])&(length(mcc_tre$annotations[[j]]$`height_95%_HPD`) > 1))
+			{
+				x1 = (mostRecentSamplingDatum-mcc_tre$annotations[[j]]$`height_95%_HPD`[[2]])-root_time
+				x2 = (mostRecentSamplingDatum-mcc_tre$annotations[[j]]$`height_95%_HPD`[[1]])-root_time
+				lines(x=c(x1,x2), y=rep(mcc_tre_obj$yy[mcc_tre$edge[j,2]],2), lwd=3.5, lend=0, col=gray90_transparent) # paste0(endYear_colour,"40")
+			}
+		if ((rootBarPlotted == FALSE)&&(!mcc_tre$edge[j,1]%in%mcc_tre$edge[,2]))
+			{
+				x1 = (mostRecentSamplingDatum-mcc_tre$root.annotation$`height_95%_HPD`[[2]])-root_time
+				x2 = (mostRecentSamplingDatum-mcc_tre$root.annotation$`height_95%_HPD`[[1]])-root_time
+				lines(x=c(x1,x2), y=rep(mcc_tre_obj$yy[mcc_tre$edge[j,1]],2), lwd=3.5, lend=0, col=gray90_transparent) # paste0(endYear_colour,"40")
+				rootBarPlotted = TRUE
+			}
+	}
+for (i in 1:dim(mcc_tre$edge)[1])
+	{
+		if (!mcc_tre$edge[i,2]%in%mcc_tre$edge[,1])
+			{
+				tipLabel = mcc_tre$tip.label[mcc_tre$edge[i,2]]; index = which(tab[,"seqID"]==tipLabel)
+				colour = different_colours_2[which(different_hostTypes==tab[index,"host_species"])]
+				if (length(colour) == 0) colour = "gray80"
+				nodelabels(node=mcc_tre$edge[i,2], pch=16, cex=0.8, col=colour)
+				nodelabels(node=mcc_tre$edge[i,2], pch=1, cex=0.8, col=rgb(1,1,1,255,maxColorValue=255), lwd=0.25)
+			}
+	}
+selectedDates = seq(1990,2020,5); selectedLabels = selectedDates
+selectedDates = c(minYear, selectedDates, maxYear); selectedLabels = c("", selectedLabels, "")
+axis(lwd=0.3, at=selectedDates-root_time, labels=selectedLabels, cex.axis=0.60, mgp=c(0,-0.10,-0.3), lwd.tick=0.3, 
+	 col.lab="gray30", col="gray30", tck=-0.010, side=1)
+dev.off()
+
 source("Tree_data_extraction3.r")
 dir.create(file.path("Alignment_1804e_DTA/ASFV_1000_trees_ext"), showWarnings=F)
 trees = readAnnotatedNexus("Alignment_1804e_DTA/ASFV_1000_trees.trees")
@@ -1006,7 +1143,7 @@ saveRDS(matrices, "Alignment_1804e_DTA/ASFV_1000_trees.rds")
 matrices = readRDS("Alignment_1804e_DTA/ASFV_1000_trees.rds")
 
 log1 = read.table(paste0("Alignment_1804e_DTA/ASFV_1000_trees.log"), header=T, sep="\t") # original DTA
-log2 = read.table(paste0("Alignment_1804e_DTA/ASFV_1000t_tipS.log"), header=T, sep="\t") # tips swapping
+log2 = read.table(paste0("Alignment_1804e_DTA/ASFV_1000t_tipS1.log"), header=T, sep="\t") # tips swapping
 BFs1 = matrix(nrow=length(countries), ncol=length(countries)); row.names(BFs1) = countries; colnames(BFs1) = countries
 BFs2 = matrix(nrow=length(countries), ncol=length(countries)); row.names(BFs2) = countries; colnames(BFs2) = countries
 for (i in 1:length(countries))
@@ -1045,7 +1182,7 @@ matrix_mean = matrix_mean/nberOfExtractionFiles
 minVals1 = min(diag(matrix_mean)); maxVals1 = max(diag(matrix_mean))
 mat = matrix_mean; diag(mat) = NA; minVals2 = min(mat, na.rm=T); maxVals2 = max(mat, na.rm=T)
 
-pdf("Alignment_180424e_NEW3.pdf", width=5.3, height=5); par(oma=c(0,0,0,0), mar=c(1,1,1,0.4), lwd=0.2, col="gray30")
+pdf("Alignment_180424e_NEW4.pdf", width=5.3, height=5); par(oma=c(0,0,0,0), mar=c(1,1,1,0.4), lwd=0.2, col="gray30")
 plot(countries2, col="gray90", border=NA, ann=F, axes=F); adjustedBFs = FALSE
 plot(borders2, col="white", lwd=0.3, add=T); plot(coasts2, col="gray70", lwd=0.5, add=T)
 mat = matrix_mean; multiplier1 = 200; multiplier2 = 2; multiplier3 = 0.1
