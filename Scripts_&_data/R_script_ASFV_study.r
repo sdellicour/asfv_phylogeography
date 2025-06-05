@@ -994,9 +994,6 @@ for (i in 1:length(swap_trees))
 q = q/length(swap_trees); adjusted_BF = (p/(1-p))/(q/(1-q)) # 514.3
 
 mcc_tre = readAnnotatedNexus("Alignment_1804e_DTA/ASFV_1000_trees.tree")
-mcc = read.csv(paste0("Alignment_1804f_RRW/ASFV_1000_trees.csv"), head=T)
-mcc = mcc[order(mcc[,"startYear"]),]; mcc1 = mcc[1,]; mcc2 = mcc[c(2:dim(mcc)[1]),]
-mcc2 = mcc2[order(mcc2[,"endYear"]),]; mcc = rbind(mcc1,mcc2)
 rootHeight = max(nodeHeights(mcc_tre)); root_time = mostRecentSamplingDatum-rootHeight
 minYear = mostRecentSamplingDatum-mcc_tre$root.annotation$`height_95%_HPD`[[2]]
 maxYear = mostRecentSamplingDatum; countries = c(); nodes_cols = c()
@@ -1005,7 +1002,7 @@ countries = unique(countries); countries = countries[order(countries)]
 countries = countries[c(1,3,4,5,6,7,8,9,12,13,14,2,10,11,15,18,16,17)]
 russian_locations = c("Armur","Kaliningrad","Karbardino-Balkaria","Primorsky","Ulyanovsk")
 colours_1 = rep(NA, length(countries)); colours_2 = different_colours_2
-for (i in 1:length(colours))
+for (i in 1:length(colours_1))
 	{
 		country = countries[i]
 		if (country%in%russian_locations) country = "Russia"
@@ -1014,14 +1011,15 @@ for (i in 1:length(colours))
 root_countries_prob = matrix(0, nrow=1, ncol=length(countries))
 countries_prob = matrix(0, nrow=length(mcc_tre$annotations), ncol=length(countries))
 colnames(root_countries_prob) = countries; colnames(countries_prob) = countries
-index = which(different_countries == mcc_tre$root.annotation$location); root_node_col = colours[index]
+# index = which(different_countries == mcc_tre$root.annotation$location) # OLD line (wrong) 
+index = which(different_locations == mcc_tre$root.annotation$location); root_node_col = colours_1[index]
 for (i in 1:length(mcc_tre$root.annotation$location.set))
 	{
 		root_countries_prob[1,mcc_tre$root.annotation$location.set[[i]][1]] = mcc_tre$root.annotation$location.set.prob[[i]][1]
 	}
 for (i in 1:length(mcc_tre$annotations))
 	{
-		index = which(countries == mcc_tre$annotations[[i]]$location); nodes_cols = c(nodes_cols, colours[index])
+		index = which(countries == mcc_tre$annotations[[i]]$location); nodes_cols = c(nodes_cols, colours_1[index])
 		for (j in 1:length(mcc_tre$annotations[[i]]$location.set))
 			{
 				countries_prob[i,mcc_tre$annotations[[i]]$location.set[[j]][1]] = mcc_tre$annotations[[i]]$location.set.prob[[j]][1]
@@ -1066,9 +1064,9 @@ for (i in 1:dim(mcc_tre$edge)[1])
 			}	else		{
 				if ((sum(countries_prob[i,]==1) > 0)|(sum(countries_prob[i,]==0) == (length(countries)-1)))
 					{
-						nodelabels(node=mcc_tre$edge[i,2], cex=0.20, pie=t(countries_prob[i,]), piecol=colours)
+						nodelabels(node=mcc_tre$edge[i,2], cex=0.20, pie=t(countries_prob[i,]), piecol=colours_1)
 					}	else		{
-						nodelabels(node=mcc_tre$edge[i,2], cex=0.55, pie=t(countries_prob[i,]), piecol=colours)
+						nodelabels(node=mcc_tre$edge[i,2], cex=0.55, pie=t(countries_prob[i,]), piecol=colours_1)
 					}	
 			}
 	}
@@ -1077,6 +1075,7 @@ selectedDates = c(minYear, selectedDates, maxYear); selectedLabels = c("", selec
 axis(lwd=0.3, at=selectedDates-root_time, labels=selectedLabels, cex.axis=0.60, mgp=c(0,-0.10,-0.3), lwd.tick=0.3, 
 	 col.lab="gray30", col="gray30", tck=-0.010, side=1)
 dev.off()
+
 
 pdf(paste0("Alignment_180424e_NEW3.pdf"), width=5.0, height=4.05); # dev.new(width=3.5, height=4.05)
 par(mar=c(1,0,0,0.5), oma=c(0,0,0,0), mgp=c(0,0.1,0), lwd=0.2, bty="o", col="gray30")
